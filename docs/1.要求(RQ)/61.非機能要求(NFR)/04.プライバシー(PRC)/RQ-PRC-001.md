@@ -7,21 +7,15 @@ version: 1.0.0
 status: 承認
 owner: プロダクトオーナー
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-SC-001]]'
-down:
-- '[[BD-QUAL-001]]'
-- '[[BD-SEC-001]]'
-- '[[DD-PERF-001]]'
-- '[[BD-RET-001]]'
 related: []
 tags:
 - CornellNoteWeb
 - RQ
 - NFR
 ---
-# RQ-PRC-001 プライバシー要求（収集最小化・削除）
 
 ## 要求
 - ユーザーの個人情報はメール等の最小限に留める

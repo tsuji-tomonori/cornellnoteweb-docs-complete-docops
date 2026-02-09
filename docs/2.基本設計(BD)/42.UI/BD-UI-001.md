@@ -7,12 +7,10 @@ version: 1.0.0
 status: 承認
 owner: UX担当
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-UC-001]]'
 - '[[BD-ARCH-001]]'
-down:
-- '[[DD-UI-001]]'
 related:
 - '[[BD-ARCH-001]]'
 tags:
@@ -20,7 +18,6 @@ tags:
 - BD
 - UI
 ---
-# BD-UI-001 画面一覧
 
 ## 画面一覧（MVP）
 - `/` : リダイレクト（ログイン状態で /notes へ）

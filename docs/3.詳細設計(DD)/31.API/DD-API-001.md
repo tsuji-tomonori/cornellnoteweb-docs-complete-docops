@@ -7,7 +7,7 @@ version: 1.0.0
 status: 承認
 owner: 開発リード
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[BD-API-001]]'
 - '[[RQ-UC-001]]'
@@ -38,9 +38,6 @@ up:
 - '[[RQ-FR-018]]'
 - '[[RQ-RTM-001]]'
 - '[[DD-COMP-001]]'
-down:
-- '[[DD-API-002]]'
-- '[[DD-API-003]]'
 related:
 - '[[BD-API-003]]'
 tags:
@@ -48,7 +45,6 @@ tags:
 - DD
 - API
 ---
-# DD-API-001 API詳細（総論）
 
 ## 共通
 - Content-Type: `application/json`

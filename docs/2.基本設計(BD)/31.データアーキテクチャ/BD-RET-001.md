@@ -7,13 +7,10 @@ version: 1.0.0
 status: 承認
 owner: プロダクトオーナー
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-PRC-001]]'
 - '[[RQ-DATA-001]]'
-down:
-- '[[AT-OPS-001]]'
-- '[[AT-RUN-001]]'
 related:
 - '[[DD-DDL-001]]'
 tags:
@@ -21,7 +18,6 @@ tags:
 - BD
 - DATA
 ---
-# BD-RET-001 データ保持・削除方針
 
 ## 原則
 - **収集最小化**: 目的に不要な個人情報は保存しない。

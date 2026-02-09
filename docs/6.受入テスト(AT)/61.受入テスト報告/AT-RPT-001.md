@@ -7,10 +7,9 @@ version: 1.0.0
 status: 下書き
 owner: プロダクトオーナー
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[AT-PLAN-001]]'
-down: []
 related:
 - '[[AT-GO-001]]'
 tags:
@@ -18,7 +17,6 @@ tags:
 - AT
 - REPORT
 ---
-# AT-RPT-001 受入テスト報告（サンプル）
 
 ## 実施結果（例）
 - 実施日: 2026-01-31

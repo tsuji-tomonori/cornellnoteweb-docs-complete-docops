@@ -7,12 +7,9 @@ version: 1.0.0
 status: 承認
 owner: アーキテクト
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-SC-001]]'
-down:
-- '[[BD-CM-001]]'
-- '[[DD-REV-001]]'
 related:
 - '[[RQ-RTM-001]]'
 tags:
@@ -20,7 +17,6 @@ tags:
 - RQ
 - DG
 ---
-# RQ-DG-001 ドキュメント更新フローと受け入れ基準
 
 ## 目的
 - ドキュメントが「最新・一貫・追跡可能」である状態を保つ。

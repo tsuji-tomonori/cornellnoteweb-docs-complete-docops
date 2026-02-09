@@ -7,11 +7,9 @@ version: 1.0.0
 status: 承認
 owner: アーキテクト
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-DM-001]]'
-down:
-- '[[DD-DDL-001]]'
 related: []
 tags:
 - CornellNoteWeb
@@ -19,7 +17,6 @@ tags:
 - DM
 - Entity
 ---
-# RQ-DM-007 ExportJob（エクスポート）
 
 ## 説明
 PDF出力などの非同期処理を表すジョブ。

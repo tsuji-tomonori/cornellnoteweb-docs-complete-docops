@@ -7,14 +7,9 @@ version: 1.0.0
 status: 承認
 owner: プロダクトオーナー
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-SC-001]]'
-down:
-- '[[BD-ADR-001]]'
-- '[[BD-ENV-001]]'
-- '[[BD-ENV-002]]'
-- '[[BD-DEP-001]]'
 related:
 - '[[RQ-SEC-001]]'
 - '[[RQ-PRC-001]]'
@@ -23,7 +18,6 @@ tags:
 - RQ
 - PC
 ---
-# RQ-PC-003 AWS デプロイは CDK によりIaC化
 
 ## 制約内容
 - 本番相当は AWS CDK で再現可能であること。

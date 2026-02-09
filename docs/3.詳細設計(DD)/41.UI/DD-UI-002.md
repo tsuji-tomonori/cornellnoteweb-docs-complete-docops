@@ -7,13 +7,11 @@ version: 1.0.0
 status: 承認
 owner: UX担当
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[BD-UI-003]]'
 - '[[DD-UI-001]]'
 - '[[DD-ALG-001]]'
-down:
-- '[[RQ-UC-004]]'
 related:
 - '[[DD-API-003]]'
 - '[[DD-ALG-001]]'
@@ -22,7 +20,6 @@ tags:
 - DD
 - UI
 ---
-# DD-UI-002 ノート一覧画面（/notes）
 
 ## 関連
 - API: [[DD-API-003]]（GET /api/notes）

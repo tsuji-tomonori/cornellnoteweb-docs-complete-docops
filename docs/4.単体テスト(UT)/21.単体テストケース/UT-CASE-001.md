@@ -7,11 +7,10 @@ version: 1.0.0
 status: 承認
 owner: QA
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[UT-PLAN-001]]'
 - '[[DD-API-002]]'
-down: []
 related:
 - '[[DD-API-001]]'
 tags:
@@ -19,7 +18,6 @@ tags:
 - UT
 - CASE
 ---
-# UT-CASE-001 AuthController: signup/login/logout の正常系
 
 ## 対象
 - AuthControllerTest / AuthControllerSessionTest を対象に、サインアップ・ログイン・ログアウトのHTTPステータスとレスポンスを検証する。

@@ -7,12 +7,9 @@ version: 1.0.0
 status: 承認
 owner: 開発リード
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-DG-001]]'
-down:
-- '[[DD-REV-001]]'
-- '[[DD-CODE-001]]'
 related:
 - '[[RQ-PC-005]]'
 tags:
@@ -20,7 +17,6 @@ tags:
 - BD
 - CM
 ---
-# BD-CM-001 構成管理方針（Git/Secrets/Docs）
 
 ## Git運用
 - ブランチ: `main` + feature branches

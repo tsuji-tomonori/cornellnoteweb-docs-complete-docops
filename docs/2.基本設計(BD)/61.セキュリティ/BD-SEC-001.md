@@ -7,7 +7,7 @@ version: 1.0.0
 status: 承認
 owner: セキュリティ担当
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-SEC-001]]'
 - '[[RQ-AV-001]]'
@@ -19,8 +19,6 @@ up:
 - '[[RQ-COST-001]]'
 - '[[RQ-UX-001]]'
 - '[[RQ-DATA-001]]'
-down:
-- '[[DD-SEC-001]]'
 related:
 - '[[BD-ADR-004]]'
 tags:
@@ -28,7 +26,6 @@ tags:
 - BD
 - SEC
 ---
-# BD-SEC-001 セキュリティ設計（境界/主要対策）
 
 ## 脅威（高位）
 - 共有リンク漏えいによる情報漏えい

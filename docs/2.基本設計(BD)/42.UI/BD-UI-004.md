@@ -7,11 +7,9 @@ version: 1.0.0
 status: 承認
 owner: UX担当
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-UX-001]]'
-down:
-- '[[DD-UI-006]]'
 related:
 - '[[DD-ALG-001]]'
 tags:
@@ -20,7 +18,6 @@ tags:
 - UI
 - A11y
 ---
-# BD-UI-004 アクセシビリティ方針
 
 ## 方針
 - キーボード操作で主要機能が完結する（Tab順、Escでモーダル閉じる）。

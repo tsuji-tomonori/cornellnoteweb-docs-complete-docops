@@ -7,16 +7,10 @@ version: 1.0.0
 status: 承認
 owner: QA
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[BD-TST-001]]'
 - '[[IT-ENV-001]]'
-down:
-- '[[IT-CASE-001]]'
-- '[[IT-CASE-002]]'
-- '[[IT-CASE-003]]'
-- '[[IT-TDAT-001]]'
-- '[[IT-RST-001]]'
 related:
 - '[[BD-ENV-001]]'
 tags:
@@ -24,7 +18,6 @@ tags:
 - IT
 - PLAN
 ---
-# IT-PLAN-001 結合テスト計画（API + DB）
 
 ## 目的
 - コンテナ環境でAPI〜DBまでの統合動作を確認し、デプロイ前の重大欠陥を防ぐ。

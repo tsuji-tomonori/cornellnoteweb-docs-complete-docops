@@ -7,7 +7,7 @@ version: 1.0.0
 status: 下書き
 owner: QA
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-PS-001]]'
 - '[[RQ-AV-001]]'
@@ -19,8 +19,6 @@ up:
 - '[[RQ-COST-001]]'
 - '[[RQ-UX-001]]'
 - '[[RQ-DATA-001]]'
-down:
-- '[[IT-CASE-003]]'
 related:
 - '[[DD-API-003]]'
 tags:
@@ -28,7 +26,6 @@ tags:
 - DD
 - PERF
 ---
-# DD-PERF-001 性能設計・性能試験計画
 
 ## 対象API（MVP）
 - GET /api/notes（一覧）

@@ -7,12 +7,9 @@ version: 1.0.0
 status: 承認
 owner: プロダクトオーナー
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-SC-001]]'
-down:
-- '[[DD-API-001]]'
-- '[[UT-PLAN-001]]'
 related:
 - '[[RQ-UC-007]]'
 - '[[DD-API-007]]'
@@ -22,7 +19,6 @@ tags:
 - RQ
 - FR
 ---
-# RQ-FR-015 共有リンクからノートを閲覧できる
 
 ## SnowCard（日本語）
 - **要求ID**: RQ-FR-015

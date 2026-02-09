@@ -7,10 +7,9 @@ version: 1.0.0
 status: 承認
 owner: プロダクトオーナー
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[AT-PLAN-001]]'
-down: []
 related:
 - '[[RQ-FR-001]]'
 tags:
@@ -18,7 +17,6 @@ tags:
 - AT
 - SCN
 ---
-# AT-SCN-001 ログイン→ノート一覧→新規作成→再ログインで保持
 
 ## 手順
 1. /signup で登録 or /login でログイン

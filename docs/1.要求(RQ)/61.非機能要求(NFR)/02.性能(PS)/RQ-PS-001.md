@@ -7,21 +7,16 @@ version: 1.0.0
 status: 承認
 owner: プロダクトオーナー
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-SC-001]]'
 - '[[BD-QUAL-001]]'
-down:
-- '[[BD-QUAL-001]]'
-- '[[BD-SEC-001]]'
-- '[[DD-PERF-001]]'
 related: []
 tags:
 - CornellNoteWeb
 - RQ
 - NFR
 ---
-# RQ-PS-001 性能目標（P95レイテンシ）
 
 ## 要求
 - ノート一覧取得: P95 < 500ms（limit=20）

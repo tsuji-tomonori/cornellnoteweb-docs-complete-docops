@@ -7,12 +7,9 @@ version: 1.0.0
 status: 承認
 owner: プロダクトオーナー
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-SC-001]]'
-down:
-- '[[BD-ADR-001]]'
-- '[[BD-ENV-001]]'
 related:
 - '[[RQ-SEC-001]]'
 - '[[RQ-PRC-001]]'
@@ -21,7 +18,6 @@ tags:
 - RQ
 - PC
 ---
-# RQ-PC-002 ローカル起動は Docker Compose で完結
 
 ## 制約内容
 - `docker compose up` でDB・マイグレーション・アプリが起動できること。

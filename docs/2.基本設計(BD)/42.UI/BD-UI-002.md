@@ -7,12 +7,10 @@ version: 1.0.0
 status: 承認
 owner: UX担当
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-GL-001]]'
 - '[[RQ-UC-003]]'
-down:
-- '[[DD-UI-003]]'
 related:
 - '[[RQ-UX-001]]'
 tags:
@@ -20,7 +18,6 @@ tags:
 - BD
 - UI
 ---
-# BD-UI-002 Cornell編集レイアウト
 
 ## レイアウト方針
 - 画面は **Cue / Notes / Summary** の3領域を常に表示する。

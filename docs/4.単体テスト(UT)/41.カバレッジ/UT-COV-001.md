@@ -7,11 +7,10 @@ version: 1.0.0
 status: 承認
 owner: QA
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-DEV-001]]'
 - '[[BD-BUILD-001]]'
-down: []
 related:
 - '[[BD-BUILD-001]]'
 tags:
@@ -19,7 +18,6 @@ tags:
 - UT
 - COV
 ---
-# UT-COV-001 カバレッジ方針（JaCoCo）
 
 ## 方針（例）
 - line coverage: 95%（主要パッケージ）

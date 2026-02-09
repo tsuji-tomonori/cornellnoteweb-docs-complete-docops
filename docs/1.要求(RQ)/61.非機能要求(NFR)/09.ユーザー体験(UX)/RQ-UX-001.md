@@ -7,21 +7,15 @@ version: 1.0.0
 status: 承認
 owner: プロダクトオーナー
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-SC-001]]'
-down:
-- '[[BD-QUAL-001]]'
-- '[[BD-SEC-001]]'
-- '[[DD-PERF-001]]'
-- '[[BD-UI-004]]'
 related: []
 tags:
 - CornellNoteWeb
 - RQ
 - NFR
 ---
-# RQ-UX-001 UX要求（到達時間・アクセシビリティ）
 
 ## 要求
 - 初回ログインから5分以内にノート作成できる

@@ -7,7 +7,7 @@ version: 1.0.0
 status: 承認
 owner: 開発リード
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-PC-002]]'
 - '[[RQ-PC-001]]'
@@ -15,8 +15,6 @@ up:
 - '[[RQ-PC-004]]'
 - '[[RQ-PC-005]]'
 - '[[RQ-PC-006]]'
-down:
-- '[[IT-ENV-001]]'
 related:
 - '[[BD-DEP-001]]'
 tags:
@@ -24,7 +22,6 @@ tags:
 - BD
 - ENV
 ---
-# BD-ENV-001 ローカル開発環境（Docker Compose）
 
 ## 概要
 - `docker-compose.yml` で DB → マイグレーション → アプリの順に起動する。

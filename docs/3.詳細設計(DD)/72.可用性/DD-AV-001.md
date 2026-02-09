@@ -7,11 +7,9 @@ version: 1.0.0
 status: 下書き
 owner: SRE
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-AV-001]]'
-down:
-- '[[AT-RUN-001]]'
 related:
 - '[[BD-RET-001]]'
 tags:
@@ -19,7 +17,6 @@ tags:
 - DD
 - AV
 ---
-# DD-AV-001 可用性詳細（バックアップ/復旧/DR）
 
 ## バックアップ
 - DB: Auroraの自動バックアップ（prod）

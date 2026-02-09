@@ -7,11 +7,10 @@ version: 1.0.0
 status: 承認
 owner: QA
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[IT-PLAN-001]]'
 - '[[DD-PERF-001]]'
-down: []
 related:
 - '[[DD-API-003]]'
 tags:
@@ -19,7 +18,6 @@ tags:
 - IT
 - CASE
 ---
-# IT-CASE-003 性能サニティ（P95目標の確認）
 
 ## 前提
 - テストデータが100件程度ある

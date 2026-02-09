@@ -7,11 +7,9 @@ version: 1.0.0
 status: 承認
 owner: 開発リード
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-FR-009]]'
-down:
-- '[[UT-CASE-003]]'
 related:
 - '[[DD-DDL-003]]'
 tags:
@@ -20,7 +18,6 @@ tags:
 - API
 - NOTEBOOK
 ---
-# DD-API-004 ノートブックAPI
 
 ## GET /api/notebooks
 ### 認証

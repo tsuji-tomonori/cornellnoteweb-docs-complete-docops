@@ -7,11 +7,9 @@ version: 1.0.0
 status: 承認
 owner: 開発リード
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-FR-010]]'
-down:
-- '[[UT-CASE-004]]'
 related:
 - '[[DD-DDL-005]]'
 tags:
@@ -20,7 +18,6 @@ tags:
 - API
 - TAG
 ---
-# DD-API-005 タグAPI
 
 ## GET /api/tags
 ### 認証

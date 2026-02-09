@@ -7,16 +7,9 @@ version: 1.0.0
 status: 承認
 owner: プロダクトオーナー
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-SC-001]]'
-down:
-- '[[BD-ADR-001]]'
-- '[[BD-ADR-002]]'
-- '[[BD-ADR-003]]'
-- '[[BD-ADR-004]]'
-- '[[BD-ADR-005]]'
-- '[[BD-ADR-006]]'
 related:
 - '[[RQ-RTM-001]]'
 tags:
@@ -24,7 +17,6 @@ tags:
 - RQ
 - RDR
 ---
-# RQ-RDR-001 共有は『閲覧専用リンク』から開始する
 
 ## 背景/状況
 - 編集共有（共同編集）はOut of Scope（[[RQ-SC-001]]）

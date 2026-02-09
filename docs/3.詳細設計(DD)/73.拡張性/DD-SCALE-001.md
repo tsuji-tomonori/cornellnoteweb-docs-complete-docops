@@ -7,10 +7,9 @@ version: 1.0.0
 status: 下書き
 owner: アーキテクト
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-SC-001]]'
-down: []
 related:
 - '[[BD-ARCH-003]]'
 tags:
@@ -18,7 +17,6 @@ tags:
 - DD
 - SCALE
 ---
-# DD-SCALE-001 拡張性設計（機能/データ/運用）
 
 ## 方向性
 - 検索: クライアント絞り込み → サーバ検索 → 外部検索（段階導入）

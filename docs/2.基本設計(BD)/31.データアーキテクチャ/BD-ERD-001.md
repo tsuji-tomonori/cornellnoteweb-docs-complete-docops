@@ -7,12 +7,9 @@ version: 1.0.0
 status: 承認
 owner: アーキテクト
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-DM-001]]'
-down:
-- '[[DD-DDL-001]]'
-- '[[DD-DBCON-001]]'
 related:
 - '[[BD-ARCH-002]]'
 tags:
@@ -21,7 +18,6 @@ tags:
 - DATA
 - ERD
 ---
-# BD-ERD-001 ER図（概要）
 
 ## ER図
 ```mermaid

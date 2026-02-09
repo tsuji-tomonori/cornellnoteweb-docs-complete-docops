@@ -7,13 +7,10 @@ version: 1.0.0
 status: 承認
 owner: アーキテクト
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-PC-001]]'
 - '[[RQ-RDR-001]]'
-down:
-- '[[BD-ARCH-001]]'
-- '[[BD-API-002]]'
 related:
 - '[[RQ-SEC-001]]'
 - '[[DD-API-002]]'
@@ -22,7 +19,6 @@ tags:
 - BD
 - ADR
 ---
-# BD-ADR-004 認証方式（セッション + HttpOnly Cookie）
 
 ## ステータス
 - Accepted

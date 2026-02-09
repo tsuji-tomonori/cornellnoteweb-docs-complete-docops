@@ -7,14 +7,12 @@ version: 1.0.0
 status: 下書き
 owner: SRE
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-AV-001]]'
 - '[[RQ-OBY-001]]'
 - '[[BD-RET-001]]'
 - '[[BD-MON-002]]'
-down:
-- '[[AT-RUN-001]]'
 related:
 - '[[BD-MON-001]]'
 tags:
@@ -22,7 +20,6 @@ tags:
 - AT
 - OPS
 ---
-# AT-OPS-001 運用受入チェックリスト
 
 ## チェック項目（抜粋）
 - [ ] 監視ダッシュボードがある（主要SLI）

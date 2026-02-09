@@ -7,13 +7,9 @@ version: 1.0.0
 status: 承認
 owner: アーキテクト
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-SC-001]]'
-down:
-- '[[RQ-FR-001]]'
-- '[[DD-API-001]]'
-- '[[UT-PLAN-001]]'
 related:
 - '[[RQ-DG-001]]'
 tags:
@@ -21,7 +17,6 @@ tags:
 - RQ
 - RTM
 ---
-# RQ-RTM-001 Obsidianリンクでのトレーサビリティ運用
 
 ## 結論（確認）
 - **要求トレーサビリティマトリックス（静的RTM）は必須ではありません。**

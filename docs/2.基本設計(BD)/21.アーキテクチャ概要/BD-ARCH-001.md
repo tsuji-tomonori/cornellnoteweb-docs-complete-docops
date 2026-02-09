@@ -7,7 +7,7 @@ version: 1.0.0
 status: 承認
 owner: アーキテクト
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-SC-001]]'
 - '[[BD-ADR-001]]'
@@ -16,12 +16,6 @@ up:
 - '[[BD-ADR-004]]'
 - '[[BD-ADR-005]]'
 - '[[BD-ADR-006]]'
-down:
-- '[[BD-ARCH-002]]'
-- '[[BD-API-001]]'
-- '[[BD-UI-001]]'
-- '[[BD-ARCH-003]]'
-- '[[BD-ARCH-004]]'
 related:
 - '[[BD-ADR-002]]'
 tags:
@@ -29,7 +23,6 @@ tags:
 - BD
 - ARCH
 ---
-# BD-ARCH-001 システムコンテキスト
 
 ## 目的
 - 外部アクターとシステム境界を明確にする。

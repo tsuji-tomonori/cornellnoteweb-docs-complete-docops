@@ -7,11 +7,10 @@ version: 1.0.0
 status: 承認
 owner: プロダクトオーナー
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[AT-PLAN-001]]'
 - '[[DD-API-008]]'
-down: []
 related:
 - '[[RQ-FR-001]]'
 tags:
@@ -19,7 +18,6 @@ tags:
 - AT
 - SCN
 ---
-# AT-SCN-004 PDF出力: ジョブ作成→完了→ダウンロード
 
 ## 手順
 1. ノートからPDF出力を要求

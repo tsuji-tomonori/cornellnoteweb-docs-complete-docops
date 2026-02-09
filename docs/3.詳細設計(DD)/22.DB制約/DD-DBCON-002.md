@@ -7,10 +7,9 @@ version: 1.0.0
 status: 承認
 owner: 開発リード
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[DD-DBCON-001]]'
-down: []
 related:
 - '[[DD-DDL-004]]'
 - '[[DD-DDL-005]]'
@@ -19,7 +18,6 @@ tags:
 - DD
 - DB
 ---
-# DD-DBCON-002 一意制約・チェック制約
 
 ## 一意制約
 - tags: `UNIQUE(user_id, name)`（同一ユーザー内でタグ名重複禁止）

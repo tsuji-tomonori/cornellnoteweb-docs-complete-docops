@@ -7,13 +7,10 @@ version: 1.0.0
 status: 承認
 owner: 開発リード
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-FR-014]]'
 - '[[BD-ARCH-004]]'
-down:
-- '[[UT-CASE-005]]'
-- '[[AT-SCN-003]]'
 related:
 - '[[DD-DDL-007]]'
 tags:
@@ -22,7 +19,6 @@ tags:
 - API
 - SHARE
 ---
-# DD-API-007 共有API
 
 ## POST /api/notes/{noteId}/share
 ### レスポンス（201）

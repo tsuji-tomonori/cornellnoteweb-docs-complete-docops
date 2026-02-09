@@ -7,12 +7,9 @@ version: 1.0.0
 status: 承認
 owner: UX担当
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-SC-001]]'
-down:
-- '[[DD-UI-002]]'
-- '[[DD-UI-004]]'
 related:
 - '[[BD-API-002]]'
 tags:
@@ -20,7 +17,6 @@ tags:
 - BD
 - UI
 ---
-# BD-UI-003 画面遷移
 
 ## 遷移図
 ```mermaid

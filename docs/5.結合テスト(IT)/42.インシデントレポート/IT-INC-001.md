@@ -7,11 +7,9 @@ version: 1.0.0
 status: 下書き
 owner: SRE
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[BD-MON-002]]'
-down:
-- '[[AT-RUN-001]]'
 related:
 - '[[DD-LOG-001]]'
 tags:
@@ -19,7 +17,6 @@ tags:
 - IT
 - INCIDENT
 ---
-# IT-INC-001 インシデントレポート（サンプル）
 
 ## 概要
 - 発生日時: 2026-01-31 10:00 JST

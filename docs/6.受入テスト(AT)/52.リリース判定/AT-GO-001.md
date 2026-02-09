@@ -7,10 +7,9 @@ version: 1.0.0
 status: 下書き
 owner: プロダクトオーナー
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[AT-RCHK-001]]'
-down: []
 related:
 - '[[DD-ERR-001]]'
 tags:
@@ -18,7 +17,6 @@ tags:
 - AT
 - GO
 ---
-# AT-GO-001 リリース判定（Go/No-Go）
 
 ## 判定基準（例）
 - Must要求が満たされている（[[RQ-FR-001]]〜）

@@ -7,11 +7,9 @@ version: 1.0.0
 status: 承認
 owner: SRE
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-PC-003]]'
-down:
-- '[[DD-DEP-001]]'
 related:
 - '[[BD-CM-001]]'
 tags:
@@ -19,7 +17,6 @@ tags:
 - BD
 - ENV
 ---
-# BD-ENV-002 環境区分と設定管理（stg/prod）
 
 ## 環境
 - `local`: Docker Compose

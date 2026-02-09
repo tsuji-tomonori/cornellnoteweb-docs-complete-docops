@@ -7,7 +7,7 @@ version: 1.0.0
 status: 承認
 owner: QA
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[BD-TST-001]]'
 - '[[RQ-FR-001]]'
@@ -29,15 +29,6 @@ up:
 - '[[RQ-FR-017]]'
 - '[[RQ-FR-018]]'
 - '[[RQ-RTM-001]]'
-down:
-- '[[UT-CASE-001]]'
-- '[[UT-MOCK-001]]'
-- '[[UT-TDAT-001]]'
-- '[[UT-RPT-001]]'
-- '[[UT-CASE-002]]'
-- '[[UT-CASE-003]]'
-- '[[UT-CASE-004]]'
-- '[[UT-CASE-005]]'
 related:
 - '[[BD-BUILD-001]]'
 tags:
@@ -45,7 +36,6 @@ tags:
 - UT
 - PLAN
 ---
-# UT-PLAN-001 単体テスト計画
 
 ## 目的
 - Controller/Serviceのロジックとエラー処理を高速に検証し、回帰を防ぐ。

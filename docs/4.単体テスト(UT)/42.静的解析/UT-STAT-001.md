@@ -7,12 +7,11 @@ version: 1.0.0
 status: 承認
 owner: QA
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-DEV-001]]'
 - '[[BD-BUILD-001]]'
 - '[[DD-CODE-001]]'
-down: []
 related:
 - '[[BD-BUILD-001]]'
 tags:
@@ -20,7 +19,6 @@ tags:
 - UT
 - STAT
 ---
-# UT-STAT-001 静的解析方針（SpotBugs/PMD/フォーマット）
 
 ## ツール
 - Spotless（フォーマット）

@@ -7,11 +7,10 @@ version: 1.0.0
 status: 承認
 owner: プロダクトオーナー
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[AT-PLAN-001]]'
 - '[[DD-API-007]]'
-down: []
 related:
 - '[[RQ-FR-001]]'
 tags:
@@ -19,7 +18,6 @@ tags:
 - AT
 - SCN
 ---
-# AT-SCN-003 共有: 共有リンク発行→第三者閲覧→取り消し
 
 ## 手順
 1. ノートから共有リンクを発行

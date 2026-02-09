@@ -7,11 +7,10 @@ version: 1.0.0
 status: 下書き
 owner: SRE
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-COST-001]]'
 - '[[BD-DEP-002]]'
-down: []
 related:
 - '[[BD-DEP-002]]'
 tags:
@@ -19,7 +18,6 @@ tags:
 - DD
 - COST
 ---
-# DD-COST-001 FinOps（コスト運用）詳細
 
 ## 方針
 - 日次/週次で主要コスト（DB、S3、CloudWatch、データ転送）をモニタする。

@@ -7,12 +7,10 @@ version: 1.0.0
 status: 下書き
 owner: SRE
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-OBY-001]]'
 - '[[BD-MON-001]]'
-down:
-- '[[AT-RUN-001]]'
 related:
 - '[[BD-MON-001]]'
 tags:
@@ -20,7 +18,6 @@ tags:
 - DD
 - LOG
 ---
-# DD-LOG-001 ログ設計（監査/運用）
 
 ## 目的
 - 障害解析（トラブルシュート）と監査（重要操作追跡）を両立する。

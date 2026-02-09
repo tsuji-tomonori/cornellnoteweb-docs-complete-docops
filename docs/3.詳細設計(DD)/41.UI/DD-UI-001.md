@@ -7,12 +7,9 @@ version: 1.0.0
 status: 承認
 owner: UX担当
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[BD-UI-001]]'
-down:
-- '[[DD-UI-002]]'
-- '[[DD-UI-003]]'
 related:
 - '[[BD-UI-004]]'
 tags:
@@ -20,7 +17,6 @@ tags:
 - DD
 - UI
 ---
-# DD-UI-001 UI詳細（総論）
 
 ## 実装方針
 - Thymeleafテンプレート（`src/main/resources/templates`） + static JS/CSS（`static/`）

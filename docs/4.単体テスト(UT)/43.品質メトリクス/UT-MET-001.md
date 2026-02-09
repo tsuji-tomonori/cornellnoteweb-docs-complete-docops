@@ -7,10 +7,9 @@ version: 1.0.0
 status: 下書き
 owner: QA
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-DEV-001]]'
-down: []
 related:
 - '[[BD-ADR-006]]'
 tags:
@@ -18,7 +17,6 @@ tags:
 - UT
 - MET
 ---
-# UT-MET-001 品質メトリクス（Mutation/複雑度）
 
 ## メトリクス（例）
 - Mutation score（PIT）: 70%以上

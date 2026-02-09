@@ -7,17 +7,10 @@ version: 1.0.0
 status: 承認
 owner: プロダクトオーナー
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-SC-001]]'
 - '[[BD-TST-001]]'
-down:
-- '[[AT-SCN-001]]'
-- '[[AT-RPT-001]]'
-- '[[AT-SCN-002]]'
-- '[[AT-SCN-003]]'
-- '[[AT-SCN-004]]'
-- '[[AT-SCN-005]]'
 related:
 - '[[RQ-PP-001]]'
 tags:
@@ -25,7 +18,6 @@ tags:
 - AT
 - PLAN
 ---
-# AT-PLAN-001 受入テスト計画
 
 ## 目的
 - 利用者価値（PP）とMust要求（FR/NFR）を満たしていることを最終確認する。

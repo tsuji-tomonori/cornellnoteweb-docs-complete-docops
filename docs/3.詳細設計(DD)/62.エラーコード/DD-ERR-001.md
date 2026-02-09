@@ -7,11 +7,9 @@ version: 1.0.0
 status: 下書き
 owner: 開発リード
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[BD-API-003]]'
-down:
-- '[[IT-RST-001]]'
 related:
 - '[[RQ-DG-001]]'
 tags:
@@ -19,7 +17,6 @@ tags:
 - DD
 - ERR
 ---
-# DD-ERR-001 エラーコードと既知ギャップ一覧
 
 ## エラーコード（案）
 - `BAD_REQUEST`: 入力不正（UUID不正、必須欠落）

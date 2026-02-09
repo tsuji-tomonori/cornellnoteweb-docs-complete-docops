@@ -7,7 +7,7 @@ version: 1.0.0
 status: 承認
 owner: 開発リード
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[BD-ERD-001]]'
 - '[[RQ-DM-002]]'
@@ -19,14 +19,6 @@ up:
 - '[[BD-DATA-001]]'
 - '[[DD-COMP-001]]'
 - '[[DD-MIG-001]]'
-down:
-- '[[DD-DDL-002]]'
-- '[[DD-DDL-003]]'
-- '[[DD-DDL-004]]'
-- '[[DD-DDL-005]]'
-- '[[DD-DDL-006]]'
-- '[[DD-DDL-007]]'
-- '[[DD-DDL-008]]'
 related:
 - '[[DD-MIG-001]]'
 tags:
@@ -34,7 +26,6 @@ tags:
 - DD
 - DDL
 ---
-# DD-DDL-001 DDL一覧（マイグレーション）
 
 ## 方針
 - `migrations/*.sql` が一次情報。

@@ -7,14 +7,11 @@ version: 1.0.0
 status: 承認
 owner: 開発リード
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-FR-003]]'
 - '[[BD-ARCH-004]]'
 - '[[DD-API-001]]'
-down:
-- '[[UT-CASE-002]]'
-- '[[IT-CASE-001]]'
 related:
 - '[[DD-DDL-004]]'
 tags:
@@ -23,7 +20,6 @@ tags:
 - API
 - NOTE
 ---
-# DD-API-003 ノートAPI
 
 ## GET /api/notes
 ### クエリ

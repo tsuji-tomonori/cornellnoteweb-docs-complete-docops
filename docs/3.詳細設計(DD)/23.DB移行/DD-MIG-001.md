@@ -7,11 +7,9 @@ version: 1.0.0
 status: 承認
 owner: 開発リード
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-DATA-001]]'
-down:
-- '[[DD-DDL-001]]'
 related:
 - '[[BD-ENV-001]]'
 tags:
@@ -19,7 +17,6 @@ tags:
 - DD
 - MIG
 ---
-# DD-MIG-001 DBマイグレーション方針（migrations/）
 
 ## 方針
 - `migrations/*.sql` を **連番**で管理し、前方互換（forward-only）を基本とする。

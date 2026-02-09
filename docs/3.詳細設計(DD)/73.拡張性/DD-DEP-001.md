@@ -7,12 +7,11 @@ version: 1.0.0
 status: 下書き
 owner: SRE
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[BD-DEP-001]]'
 - '[[BD-ARCH-003]]'
 - '[[BD-ENV-002]]'
-down: []
 related:
 - '[[BD-ARCH-003]]'
 tags:
@@ -20,7 +19,6 @@ tags:
 - DD
 - DEP
 ---
-# DD-DEP-001 デプロイ詳細（CDK構成要素）
 
 ## 概要（infra/）
 - `NetworkComponent`: VPC/サブネット

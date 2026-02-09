@@ -7,13 +7,10 @@ version: 1.0.0
 status: 承認
 owner: SRE
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-PC-003]]'
 - '[[BD-ARCH-003]]'
-down:
-- '[[DD-DEP-001]]'
-- '[[AT-REL-001]]'
 related:
 - '[[BD-ARCH-003]]'
 tags:
@@ -21,7 +18,6 @@ tags:
 - BD
 - DEP
 ---
-# BD-DEP-001 デプロイ方式（ローカル/クラウド）
 
 ## ローカル（開発）
 - Docker Compose で起動（[[BD-ENV-001]]）

@@ -7,12 +7,9 @@ version: 1.0.0
 status: 承認
 owner: プロダクトオーナー
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-SC-001]]'
-down:
-- '[[RQ-FR-001]]'
-- '[[DD-API-001]]'
 related:
 - '[[BD-UI-001]]'
 tags:
@@ -20,7 +17,6 @@ tags:
 - RQ
 - UC
 ---
-# RQ-UC-005 検索
 
 ## 概要
 利用者がキーワードでノートを検索する。

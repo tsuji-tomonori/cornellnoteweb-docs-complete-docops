@@ -7,10 +7,9 @@ version: 1.0.0
 status: 承認
 owner: プロダクトオーナー
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-SC-001]]'
-down: []
 related:
 - '[[RQ-AV-001]]'
 - '[[AT-RUN-001]]'
@@ -20,7 +19,6 @@ tags:
 - GL
 - 用語
 ---
-# RQ-GL-009 RTO/RPO
 
 ## 定義
 障害時の復旧目標時間（RTO）と許容データ損失量（RPO）。

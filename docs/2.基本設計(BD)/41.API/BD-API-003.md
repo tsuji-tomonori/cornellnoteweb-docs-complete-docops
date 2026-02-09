@@ -7,11 +7,9 @@ version: 1.0.0
 status: 承認
 owner: アーキテクト
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-FR-001]]'
-down:
-- '[[DD-ERR-001]]'
 related:
 - '[[DD-API-001]]'
 tags:
@@ -20,7 +18,6 @@ tags:
 - API
 - ERR
 ---
-# BD-API-003 エラーモデル（統一フォーマット）
 
 ## 方針
 - APIエラーは JSON で統一し、フロント側で一貫して扱えるようにする。

@@ -7,12 +7,10 @@ version: 1.0.0
 status: 承認
 owner: プロダクトオーナー
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-PP-001]]'
 - '[[RQ-SC-001]]'
-down:
-- '[[RQ-UC-001]]'
 related:
 - '[[RQ-SEC-001]]'
 - '[[RQ-UX-001]]'
@@ -21,7 +19,6 @@ tags:
 - RQ
 - SH
 ---
-# RQ-SH-003 運用担当（SRE/運用）
 
 ## 期待（期待値）
 - 障害を早く検知・復旧したい

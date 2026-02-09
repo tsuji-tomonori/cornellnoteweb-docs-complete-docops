@@ -7,11 +7,9 @@ version: 1.0.0
 status: 承認
 owner: プロダクトオーナー
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-SC-001]]'
-down:
-- '[[BD-ADR-001]]'
 related:
 - '[[RQ-RTM-001]]'
 tags:
@@ -19,7 +17,6 @@ tags:
 - RQ
 - RDR
 ---
-# RQ-RDR-002 PDF出力は非同期ジョブとして扱う
 
 ## 背景/状況
 - 同期生成はレスポンスタイム/タイムアウトのリスクが高い

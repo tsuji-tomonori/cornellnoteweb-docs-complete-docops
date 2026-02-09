@@ -7,10 +7,9 @@ version: 1.0.0
 status: 承認
 owner: プロダクトオーナー
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-SC-001]]'
-down: []
 related:
 - '[[BD-ADR-001]]'
 tags:
@@ -19,7 +18,6 @@ tags:
 - GL
 - 用語
 ---
-# RQ-GL-012 ADR
 
 ## 定義
 Architecture Decision Record。設計上の重要判断を『背景/選択肢/決定/結果』で記録する。

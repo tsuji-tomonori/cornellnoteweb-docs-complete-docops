@@ -7,12 +7,9 @@ version: 1.0.0
 status: 承認
 owner: アーキテクト
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[BD-ARCH-001]]'
-down:
-- '[[BD-DEP-001]]'
-- '[[DD-DEP-001]]'
 related:
 - '[[BD-ADR-002]]'
 - '[[BD-ADR-005]]'
@@ -21,7 +18,6 @@ tags:
 - BD
 - ARCH
 ---
-# BD-ARCH-003 デプロイ構成（AWS想定）
 
 ## デプロイ図（概略）
 ```mermaid

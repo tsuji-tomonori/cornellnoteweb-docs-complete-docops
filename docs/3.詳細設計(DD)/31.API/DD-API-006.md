@@ -7,10 +7,9 @@ version: 1.0.0
 status: 下書き
 owner: 開発リード
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-FR-013]]'
-down: []
 related:
 - '[[DD-ALG-001]]'
 tags:
@@ -19,7 +18,6 @@ tags:
 - API
 - SEARCH
 ---
-# DD-API-006 検索API
 
 ## GET /api/search
 ### クエリ

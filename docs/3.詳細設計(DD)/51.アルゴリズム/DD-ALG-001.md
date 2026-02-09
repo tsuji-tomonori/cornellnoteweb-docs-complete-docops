@@ -7,13 +7,10 @@ version: 1.0.0
 status: 承認
 owner: 開発リード
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-FR-012]]'
 - '[[RQ-UC-003]]'
-down:
-- '[[DD-UI-002]]'
-- '[[DD-UI-003]]'
 related:
 - '[[RQ-PS-001]]'
 tags:
@@ -21,7 +18,6 @@ tags:
 - DD
 - ALG
 ---
-# DD-ALG-001 フロントエンドの主要アルゴリズム（Debounce/AutoSave/Filter）
 
 ## 1) Debounce（検索）
 - 入力のたびにAPI/DOM更新を行うと負荷が高いので、一定時間の無入力後に処理する。

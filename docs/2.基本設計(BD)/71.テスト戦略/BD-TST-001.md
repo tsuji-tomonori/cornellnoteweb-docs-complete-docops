@@ -7,13 +7,9 @@ version: 1.0.0
 status: 承認
 owner: QAリード
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-DEV-001]]'
-down:
-- '[[UT-PLAN-001]]'
-- '[[IT-PLAN-001]]'
-- '[[AT-PLAN-001]]'
 related:
 - '[[RQ-FR-001]]'
 tags:
@@ -21,7 +17,6 @@ tags:
 - BD
 - TEST
 ---
-# BD-TST-001 テスト戦略（UT/IT/AT/E2E）
 
 ## テストピラミッド
 ```mermaid

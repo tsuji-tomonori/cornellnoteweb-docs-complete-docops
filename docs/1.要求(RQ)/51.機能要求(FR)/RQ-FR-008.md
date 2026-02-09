@@ -7,12 +7,9 @@ version: 1.0.0
 status: 承認
 owner: プロダクトオーナー
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-SC-001]]'
-down:
-- '[[DD-API-001]]'
-- '[[UT-PLAN-001]]'
 related:
 - '[[DD-API-003]]'
 tags:
@@ -20,7 +17,6 @@ tags:
 - RQ
 - FR
 ---
-# RQ-FR-008 ノート内容（Cue/Notes/Summary）を取得できる
 
 ## SnowCard（日本語）
 - **要求ID**: RQ-FR-008

@@ -7,12 +7,9 @@ version: 1.0.0
 status: 承認
 owner: 開発リード
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[BD-ARCH-002]]'
-down:
-- '[[DD-API-001]]'
-- '[[DD-DDL-001]]'
 related:
 - '[[RQ-FR-001]]'
 tags:
@@ -20,7 +17,6 @@ tags:
 - DD
 - COMP
 ---
-# DD-COMP-001 コンポーネント一覧（Backend）
 
 ## パッケージ構成
 - `com.example.cornellnote.web` : PageController（Thymeleaf画面）

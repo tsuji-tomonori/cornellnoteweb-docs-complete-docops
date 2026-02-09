@@ -7,11 +7,9 @@ version: 1.0.0
 status: 承認
 owner: UX担当
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[BD-UI-003]]'
-down:
-- '[[RQ-UC-001]]'
 related:
 - '[[DD-API-002]]'
 tags:
@@ -19,7 +17,6 @@ tags:
 - DD
 - UI
 ---
-# DD-UI-004 ログイン画面（/login, /signup）
 
 ## 関連
 - API: [[DD-API-002]]

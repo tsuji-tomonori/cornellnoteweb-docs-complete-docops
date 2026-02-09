@@ -7,10 +7,9 @@ version: 1.0.0
 status: 承認
 owner: UX担当
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-UC-007]]'
-down: []
 related:
 - '[[DD-API-007]]'
 tags:
@@ -18,7 +17,6 @@ tags:
 - DD
 - UI
 ---
-# DD-UI-005 共有閲覧画面（/share）
 
 ## 関連
 - API: [[DD-API-007]]（GET /api/share/{token}）

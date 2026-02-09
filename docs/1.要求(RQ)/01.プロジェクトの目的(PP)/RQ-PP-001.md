@@ -7,19 +7,9 @@ version: 1.0.0
 status: 承認
 owner: プロダクトオーナー
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-SC-001]]'
-down:
-- '[[RQ-UC-002]]'
-- '[[RQ-FR-002]]'
-- '[[RQ-SC-001]]'
-- '[[RQ-SH-001]]'
-- '[[RQ-SH-002]]'
-- '[[RQ-SH-003]]'
-- '[[RQ-SH-004]]'
-- '[[BD-QUAL-001]]'
-- '[[AT-GUIDE-001]]'
 related:
 - '[[RQ-SEC-001]]'
 tags:
@@ -27,7 +17,6 @@ tags:
 - RQ
 - PP
 ---
-# RQ-PP-001 コーネル式ノート作成体験を提供する
 
 ## SnowCard（日本語）
 - **要求ID**: RQ-PP-001

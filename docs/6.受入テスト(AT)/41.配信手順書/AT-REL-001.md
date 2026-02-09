@@ -7,12 +7,10 @@ version: 1.0.0
 status: 下書き
 owner: SRE
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[BD-DEP-001]]'
 - '[[DD-REV-001]]'
-down:
-- '[[AT-RCHK-001]]'
 related:
 - '[[DD-DEP-001]]'
 tags:
@@ -20,7 +18,6 @@ tags:
 - AT
 - REL
 ---
-# AT-REL-001 配信手順書（リリース手順）
 
 ## 手順（概要）
 1. mainの状態をタグ付け（例: v0.1.0）

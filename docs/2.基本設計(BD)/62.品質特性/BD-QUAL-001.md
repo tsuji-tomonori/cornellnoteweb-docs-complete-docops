@@ -7,7 +7,7 @@ version: 1.0.0
 status: 承認
 owner: アーキテクト
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-PP-001]]'
 - '[[RQ-AV-001]]'
@@ -20,10 +20,6 @@ up:
 - '[[RQ-COST-001]]'
 - '[[RQ-UX-001]]'
 - '[[RQ-DATA-001]]'
-down:
-- '[[RQ-AV-001]]'
-- '[[RQ-PS-001]]'
-- '[[RQ-SEC-001]]'
 related:
 - '[[BD-ADR-006]]'
 tags:
@@ -31,7 +27,6 @@ tags:
 - BD
 - QUAL
 ---
-# BD-QUAL-001 品質特性と優先順位
 
 ## 優先順位（MVP）
 1. **機能適合性**: Cornellノート作成/整理が迷わずできる

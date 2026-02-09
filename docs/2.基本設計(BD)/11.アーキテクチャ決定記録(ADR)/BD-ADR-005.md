@@ -7,12 +7,10 @@ version: 1.0.0
 status: 承認
 owner: アーキテクト
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-PC-001]]'
 - '[[RQ-RDR-001]]'
-down:
-- '[[BD-ARCH-001]]'
 related:
 - '[[RQ-RDR-002]]'
 - '[[DD-API-008]]'
@@ -21,7 +19,6 @@ tags:
 - BD
 - ADR
 ---
-# BD-ADR-005 PDF生成方式（非同期ワーカー）
 
 ## ステータス
 - Accepted

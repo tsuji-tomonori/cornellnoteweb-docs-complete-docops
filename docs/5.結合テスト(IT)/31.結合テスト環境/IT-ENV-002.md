@@ -7,10 +7,8 @@ version: 1.0.0
 status: 承認
 owner: QA
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
-- '[[DD-API-009]]'
-down:
 - '[[DD-API-009]]'
 related:
 - '[[IT-TDAT-001]]'
@@ -19,7 +17,6 @@ tags:
 - IT
 - ENV
 ---
-# IT-ENV-002 E2E/結合向けSeed戦略（/api/e2e/seed）
 
 ## 目的
 - UI/E2Eや結合試験の前提データを安定化する。

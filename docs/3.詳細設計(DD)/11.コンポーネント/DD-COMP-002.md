@@ -7,18 +7,15 @@ version: 1.0.0
 status: 承認
 owner: 開発リード
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[BD-API-001]]'
-down:
-- '[[DD-API-002]]'
 related: []
 tags:
 - CornellNoteWeb
 - DD
 - COMP
 ---
-# DD-COMP-002 APIエンドポイント ↔ Controller 対応
 
 ## 対応表（抜粋）
 - 認証: `AuthController`

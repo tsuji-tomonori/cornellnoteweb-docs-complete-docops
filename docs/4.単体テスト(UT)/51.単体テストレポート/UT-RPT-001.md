@@ -7,10 +7,9 @@ version: 1.0.0
 status: 下書き
 owner: QA
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[UT-PLAN-001]]'
-down: []
 related:
 - '[[UT-COV-001]]'
 tags:
@@ -18,7 +17,6 @@ tags:
 - UT
 - RPT
 ---
-# UT-RPT-001 単体テストレポート（サンプル）
 
 ## 実行結果（例）
 - 実行日: 2026-01-31

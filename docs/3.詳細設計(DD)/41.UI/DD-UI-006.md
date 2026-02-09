@@ -7,11 +7,9 @@ version: 1.0.0
 status: 下書き
 owner: QA
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[BD-UI-004]]'
-down:
-- '[[AT-SCN-005]]'
 related: []
 tags:
 - CornellNoteWeb
@@ -19,7 +17,6 @@ tags:
 - UI
 - A11y
 ---
-# DD-UI-006 アクセシビリティ検証（チェックリスト/テスト）
 
 ## チェックリスト（抜粋）
 - [ ] 主要操作がキーボードのみで可能（Tab/Shift+Tab/Enter/Esc）

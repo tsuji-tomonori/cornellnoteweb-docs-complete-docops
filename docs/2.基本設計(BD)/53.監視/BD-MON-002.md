@@ -7,19 +7,15 @@ version: 1.0.0
 status: 下書き
 owner: SRE
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-AV-001]]'
-down:
-- '[[AT-OPS-001]]'
-- '[[IT-INC-001]]'
 related: []
 tags:
 - CornellNoteWeb
 - BD
 - MON
 ---
-# BD-MON-002 SLO/エラーバジェット運用（案）
 
 ## 方針（案）
 - 月次SLOを満たしている限り、デプロイ頻度を優先する。

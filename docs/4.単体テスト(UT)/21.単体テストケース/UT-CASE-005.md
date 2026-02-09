@@ -7,11 +7,10 @@ version: 1.0.0
 status: 承認
 owner: QA
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[UT-PLAN-001]]'
 - '[[DD-API-007]]'
-down: []
 related:
 - '[[DD-API-001]]'
 tags:
@@ -19,7 +18,6 @@ tags:
 - UT
 - CASE
 ---
-# UT-CASE-005 ShareController: 共有リンクの生成/取得/取り消し
 
 ## 対象
 - ShareControllerTest を対象に、共有リンク生成（201）→取得（200）→取り消し（204）を検証する。

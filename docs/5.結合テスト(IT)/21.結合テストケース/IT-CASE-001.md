@@ -7,11 +7,10 @@ version: 1.0.0
 status: 承認
 owner: QA
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[IT-PLAN-001]]'
 - '[[DD-API-003]]'
-down: []
 related:
 - '[[DD-API-003]]'
 tags:
@@ -19,7 +18,6 @@ tags:
 - IT
 - CASE
 ---
-# IT-CASE-001 ノート作成→取得→更新→削除（API+DB）
 
 ## 前提
 - docker compose up でapp/dbが起動している

@@ -7,11 +7,9 @@ version: 1.0.0
 status: 承認
 owner: QA
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[BD-ENV-001]]'
-down:
-- '[[IT-PLAN-001]]'
 related:
 - '[[DD-MIG-001]]'
 tags:
@@ -19,7 +17,6 @@ tags:
 - IT
 - ENV
 ---
-# IT-ENV-001 結合テスト環境（Docker Compose）
 
 ## 目的
 - 本番相当の「アプリ + DB + マイグレーション」をローカルで再現する。

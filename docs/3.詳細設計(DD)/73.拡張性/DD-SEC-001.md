@@ -7,10 +7,9 @@ version: 1.0.0
 status: 下書き
 owner: セキュリティ担当
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[BD-SEC-001]]'
-down: []
 related:
 - '[[DD-LOG-001]]'
 tags:
@@ -18,7 +17,6 @@ tags:
 - DD
 - SEC
 ---
-# DD-SEC-001 セキュリティ統制（詳細）
 
 ## 詳細統制（案）
 - IAM: 最小権限（LambdaがS3/SQS/Secretsへ必要な権限のみ）

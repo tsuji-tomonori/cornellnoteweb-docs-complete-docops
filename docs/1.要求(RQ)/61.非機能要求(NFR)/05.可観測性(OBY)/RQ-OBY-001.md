@@ -7,23 +7,15 @@ version: 1.0.0
 status: 承認
 owner: プロダクトオーナー
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-SC-001]]'
-down:
-- '[[BD-QUAL-001]]'
-- '[[BD-SEC-001]]'
-- '[[DD-PERF-001]]'
-- '[[BD-MON-001]]'
-- '[[DD-LOG-001]]'
-- '[[AT-OPS-001]]'
 related: []
 tags:
 - CornellNoteWeb
 - RQ
 - NFR
 ---
-# RQ-OBY-001 可観測性要求（ログ/メトリクス/アラート）
 
 ## 要求
 - APIのリクエスト数、エラー率、レイテンシを計測する

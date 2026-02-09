@@ -7,12 +7,10 @@ version: 1.0.0
 status: 承認
 owner: アーキテクト
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-PC-001]]'
 - '[[RQ-RDR-001]]'
-down:
-- '[[BD-ARCH-001]]'
 related:
 - '[[BD-DATA-001]]'
 - '[[DD-MIG-001]]'
@@ -21,7 +19,6 @@ tags:
 - BD
 - ADR
 ---
-# BD-ADR-003 データ保管戦略（RDB + Object Storage）
 
 ## ステータス
 - Accepted

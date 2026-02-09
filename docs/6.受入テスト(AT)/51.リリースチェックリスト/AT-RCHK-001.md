@@ -7,11 +7,9 @@ version: 1.0.0
 status: 下書き
 owner: SRE
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[AT-REL-001]]'
-down:
-- '[[AT-GO-001]]'
 related:
 - '[[AT-OPS-001]]'
 tags:
@@ -19,7 +17,6 @@ tags:
 - AT
 - CHECK
 ---
-# AT-RCHK-001 リリースチェックリスト
 
 ## チェック項目（抜粋）
 - [ ] UT/IT/E2Eが全てPASS

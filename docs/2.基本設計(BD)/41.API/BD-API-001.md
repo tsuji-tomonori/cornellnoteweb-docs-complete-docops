@@ -7,13 +7,10 @@ version: 1.0.0
 status: 承認
 owner: アーキテクト
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-FR-001]]'
 - '[[BD-ARCH-001]]'
-down:
-- '[[DD-API-001]]'
-- '[[DD-COMP-002]]'
 related:
 - '[[BD-ARCH-002]]'
 tags:
@@ -21,7 +18,6 @@ tags:
 - BD
 - API
 ---
-# BD-API-001 API概要（エンドポイント一覧）
 
 ## 原則
 - ベースパス: `/api`

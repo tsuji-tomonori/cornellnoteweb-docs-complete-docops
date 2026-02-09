@@ -7,18 +7,9 @@ version: 1.0.0
 status: 承認
 owner: アーキテクト
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-SC-001]]'
-down:
-- '[[RQ-DM-002]]'
-- '[[BD-ERD-001]]'
-- '[[RQ-DM-003]]'
-- '[[RQ-DM-004]]'
-- '[[RQ-DM-005]]'
-- '[[RQ-DM-006]]'
-- '[[RQ-DM-007]]'
-- '[[BD-DATA-001]]'
 related:
 - '[[RQ-GL-002]]'
 tags:
@@ -26,7 +17,6 @@ tags:
 - RQ
 - DM
 ---
-# RQ-DM-001 ドメインモデル概要（CornellNoteWeb）
 
 ## 目的
 - 用語とデータ構造の境界を合意し、要求（FR/UC）と設計（ERD/DDL）をつなぐ。

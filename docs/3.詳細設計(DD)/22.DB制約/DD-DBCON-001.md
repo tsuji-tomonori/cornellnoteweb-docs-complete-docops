@@ -7,11 +7,9 @@ version: 1.0.0
 status: 承認
 owner: 開発リード
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[BD-ERD-001]]'
-down:
-- '[[DD-DBCON-002]]'
 related:
 - '[[DD-DDL-001]]'
 tags:
@@ -19,7 +17,6 @@ tags:
 - DD
 - DB
 ---
-# DD-DBCON-001 DB制約（全体）
 
 ## 外部キー（FK）
 - notebooks.user_id → users.id

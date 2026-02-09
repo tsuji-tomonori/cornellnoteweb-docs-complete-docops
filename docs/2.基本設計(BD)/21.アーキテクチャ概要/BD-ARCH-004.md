@@ -7,12 +7,9 @@ version: 1.0.0
 status: 承認
 owner: アーキテクト
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[BD-ARCH-001]]'
-down:
-- '[[DD-API-003]]'
-- '[[DD-API-007]]'
 related:
 - '[[RQ-UC-002]]'
 - '[[RQ-UC-007]]'
@@ -21,7 +18,6 @@ tags:
 - BD
 - ARCH
 ---
-# BD-ARCH-004 主要データフロー（ノート作成〜共有）
 
 ## データフロー（概略）
 ```mermaid

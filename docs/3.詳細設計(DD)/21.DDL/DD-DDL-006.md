@@ -7,10 +7,9 @@ version: 1.0.0
 status: 承認
 owner: 開発リード
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[DD-DDL-001]]'
-down: []
 related:
 - '[[DD-DBCON-001]]'
 tags:
@@ -18,7 +17,6 @@ tags:
 - DD
 - DDL
 ---
-# DD-DDL-006 note_tags テーブル
 
 ## DDL（migrations/005_create_note_tags.sql）
 ```sql

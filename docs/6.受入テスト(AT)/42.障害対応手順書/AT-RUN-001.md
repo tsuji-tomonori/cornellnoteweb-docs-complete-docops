@@ -7,14 +7,13 @@ version: 1.0.0
 status: 下書き
 owner: SRE
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[DD-LOG-001]]'
 - '[[BD-RET-001]]'
 - '[[DD-AV-001]]'
 - '[[IT-INC-001]]'
 - '[[AT-OPS-001]]'
-down: []
 related:
 - '[[BD-MON-001]]'
 tags:
@@ -22,7 +21,6 @@ tags:
 - AT
 - RUN
 ---
-# AT-RUN-001 障害対応手順書（Runbook）
 
 ## 目的
 - 重大障害の検知〜復旧までを再現可能にする。

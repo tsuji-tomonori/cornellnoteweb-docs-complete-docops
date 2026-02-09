@@ -7,13 +7,9 @@ version: 1.0.0
 status: 承認
 owner: プロダクトオーナー
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-SC-001]]'
-down:
-- '[[DD-API-001]]'
-- '[[UT-PLAN-001]]'
-- '[[DD-API-008]]'
 related:
 - '[[RQ-UC-006]]'
 - '[[DD-API-008]]'
@@ -23,7 +19,6 @@ tags:
 - RQ
 - FR
 ---
-# RQ-FR-017 PDFエクスポートを要求できる
 
 ## SnowCard（日本語）
 - **要求ID**: RQ-FR-017

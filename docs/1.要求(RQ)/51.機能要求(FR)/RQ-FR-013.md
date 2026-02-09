@@ -7,13 +7,9 @@ version: 1.0.0
 status: 承認
 owner: プロダクトオーナー
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-SC-001]]'
-down:
-- '[[DD-API-001]]'
-- '[[UT-PLAN-001]]'
-- '[[DD-API-006]]'
 related:
 - '[[RQ-UC-005]]'
 - '[[DD-API-006]]'
@@ -22,7 +18,6 @@ tags:
 - RQ
 - FR
 ---
-# RQ-FR-013 検索API（q/tag/notebook）で絞り込める
 
 ## SnowCard（日本語）
 - **要求ID**: RQ-FR-013

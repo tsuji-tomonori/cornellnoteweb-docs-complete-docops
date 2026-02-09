@@ -7,22 +7,16 @@ version: 1.0.0
 status: 承認
 owner: プロダクトオーナー
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-SC-001]]'
 - '[[BD-QUAL-001]]'
-down:
-- '[[BD-QUAL-001]]'
-- '[[BD-SEC-001]]'
-- '[[DD-PERF-001]]'
-- '[[BD-API-002]]'
 related: []
 tags:
 - CornellNoteWeb
 - RQ
 - NFR
 ---
-# RQ-SEC-001 セキュリティ要求（MVP）
 
 ## 要求
 - 認証されたユーザーのみが自分のノートへアクセスできる（将来強化）

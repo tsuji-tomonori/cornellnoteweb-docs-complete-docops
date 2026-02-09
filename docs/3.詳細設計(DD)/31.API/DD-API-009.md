@@ -7,10 +7,8 @@ version: 1.0.0
 status: 承認
 owner: 開発リード
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
-- '[[IT-ENV-002]]'
-down:
 - '[[IT-ENV-002]]'
 related:
 - '[[IT-TDAT-001]]'
@@ -20,7 +18,6 @@ tags:
 - API
 - E2E
 ---
-# DD-API-009 E2E Seed API（開発用）
 
 ## POST /api/e2e/seed
 - E2Eテストのために固定IDのユーザー/ノートブック/タグ/ノートを投入する。

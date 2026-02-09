@@ -7,12 +7,10 @@ version: 1.0.0
 status: 承認
 owner: アーキテクト
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[BD-ADR-004]]'
 - '[[RQ-SEC-001]]'
-down:
-- '[[DD-API-002]]'
 related:
 - '[[BD-UI-003]]'
 tags:
@@ -21,7 +19,6 @@ tags:
 - API
 - SEC
 ---
-# BD-API-002 認証/セッション方針
 
 ## 方針（MVP）
 - 認証状態はサーバセッション（HttpSession）で保持する。

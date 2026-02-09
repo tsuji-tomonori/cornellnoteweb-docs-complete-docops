@@ -7,10 +7,9 @@ version: 1.0.0
 status: 承認
 owner: QA
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[IT-PLAN-001]]'
-down: []
 related:
 - '[[DD-API-003]]'
 tags:
@@ -18,7 +17,6 @@ tags:
 - IT
 - CASE
 ---
-# IT-CASE-002 共有リンク発行→第三者閲覧→取り消し
 
 ## 前提
 - ノートが存在する

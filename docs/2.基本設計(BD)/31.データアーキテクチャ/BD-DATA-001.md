@@ -7,11 +7,9 @@ version: 1.0.0
 status: 承認
 owner: アーキテクト
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-DM-001]]'
-down:
-- '[[DD-DDL-001]]'
 related:
 - '[[BD-ERD-001]]'
 - '[[BD-ADR-003]]'
@@ -20,7 +18,6 @@ tags:
 - BD
 - DATA
 ---
-# BD-DATA-001 データ設計方針（RDB中心）
 
 ## 方針
 - 参照整合性は外部キーで担保する。

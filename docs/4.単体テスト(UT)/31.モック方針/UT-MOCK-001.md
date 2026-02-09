@@ -7,10 +7,9 @@ version: 1.0.0
 status: 承認
 owner: QA
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[UT-PLAN-001]]'
-down: []
 related:
 - '[[BD-ADR-002]]'
 tags:
@@ -18,7 +17,6 @@ tags:
 - UT
 - MOCK
 ---
-# UT-MOCK-001 モック方針（外部I/F）
 
 ## 方針
 - Controllerの単体テストでは外部I/F（S3/SQS/メール）はモックする。

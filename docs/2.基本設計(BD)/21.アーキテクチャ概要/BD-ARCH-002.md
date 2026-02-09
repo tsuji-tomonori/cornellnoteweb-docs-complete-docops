@@ -7,11 +7,9 @@ version: 1.0.0
 status: 承認
 owner: アーキテクト
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[BD-ARCH-001]]'
-down:
-- '[[DD-COMP-001]]'
 related:
 - '[[BD-ADR-001]]'
 tags:
@@ -19,7 +17,6 @@ tags:
 - BD
 - ARCH
 ---
-# BD-ARCH-002 論理構成（レイヤ/責務）
 
 ## 目的
 - モジュール境界と責務を明確にし、変更影響を局所化する。

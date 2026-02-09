@@ -7,11 +7,10 @@ version: 1.0.0
 status: 下書き
 owner: QA
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[IT-PLAN-001]]'
 - '[[DD-ERR-001]]'
-down: []
 related:
 - '[[DD-ERR-001]]'
 tags:
@@ -19,7 +18,6 @@ tags:
 - IT
 - RESULT
 ---
-# IT-RST-001 結合テスト結果（サンプル）
 
 ## 実行結果（例）
 - 実行日: 2026-01-31

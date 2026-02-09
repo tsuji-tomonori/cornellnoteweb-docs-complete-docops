@@ -7,10 +7,9 @@ version: 1.0.0
 status: 承認
 owner: プロダクトオーナー
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-PP-001]]'
-down: []
 related:
 - '[[RQ-PRC-001]]'
 tags:
@@ -18,7 +17,6 @@ tags:
 - AT
 - GUIDE
 ---
-# AT-GUIDE-001 ユーザーガイド（MVP）
 
 ## はじめに
 CornellNoteWeb は、学習メモを **Cornellノート（Cue/Notes/Summary）** 形式で作成・整理するWebアプリです。

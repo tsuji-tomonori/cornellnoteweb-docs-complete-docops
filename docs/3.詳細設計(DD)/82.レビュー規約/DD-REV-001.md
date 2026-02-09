@@ -7,12 +7,10 @@ version: 1.0.0
 status: 承認
 owner: 開発リード
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-DG-001]]'
 - '[[BD-CM-001]]'
-down:
-- '[[AT-REL-001]]'
 related:
 - '[[RQ-RTM-001]]'
 tags:
@@ -20,7 +18,6 @@ tags:
 - DD
 - REVIEW
 ---
-# DD-REV-001 レビュー規約（PR/Docs）
 
 ## PRレビュー観点（コード）
 - 仕様との整合: 関連ドキュメント（FR/UC/API/DDL）リンクがある

@@ -7,12 +7,8 @@ version: 1.0.0
 status: 承認
 owner: プロダクトオーナー
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
-- '[[RQ-SC-001]]'
-down:
-- '[[RQ-UC-002]]'
-- '[[RQ-FR-002]]'
 - '[[RQ-SC-001]]'
 related:
 - '[[RQ-SEC-001]]'
@@ -21,7 +17,6 @@ tags:
 - RQ
 - PP
 ---
-# RQ-PP-002 ノートの再発見と復習を容易にする
 
 ## SnowCard（日本語）
 - **要求ID**: RQ-PP-002

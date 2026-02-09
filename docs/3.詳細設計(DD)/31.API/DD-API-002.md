@@ -7,13 +7,11 @@ version: 1.0.0
 status: 承認
 owner: 開発リード
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[BD-API-002]]'
 - '[[DD-COMP-002]]'
 - '[[DD-API-001]]'
-down:
-- '[[UT-CASE-001]]'
 related:
 - '[[RQ-FR-001]]'
 - '[[RQ-FR-002]]'
@@ -23,7 +21,6 @@ tags:
 - API
 - AUTH
 ---
-# DD-API-002 認証API
 
 ## POST /api/auth/signup
 ### リクエスト

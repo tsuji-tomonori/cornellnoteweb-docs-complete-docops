@@ -7,10 +7,9 @@ version: 1.0.0
 status: 承認
 owner: QA
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[UT-PLAN-001]]'
-down: []
 related:
 - '[[DD-DDL-001]]'
 tags:
@@ -18,7 +17,6 @@ tags:
 - UT
 - TDAT
 ---
-# UT-TDAT-001 単体テストデータ設計（DBRider）
 
 ## 方式
 - `src/test/resources/datasets/*.yml` をDBRiderで投入する。

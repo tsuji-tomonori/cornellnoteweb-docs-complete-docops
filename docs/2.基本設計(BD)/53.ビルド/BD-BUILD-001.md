@@ -7,12 +7,9 @@ version: 1.0.0
 status: 承認
 owner: 開発リード
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-DEV-001]]'
-down:
-- '[[UT-COV-001]]'
-- '[[UT-STAT-001]]'
 related:
 - '[[BD-CM-001]]'
 tags:
@@ -20,7 +17,6 @@ tags:
 - BD
 - BUILD
 ---
-# BD-BUILD-001 ビルド方針（Gradle/品質ゲート）
 
 ## ビルド
 - `./gradlew build` でアプリをビルドする。

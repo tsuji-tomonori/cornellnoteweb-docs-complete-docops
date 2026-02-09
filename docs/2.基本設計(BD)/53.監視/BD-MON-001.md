@@ -7,12 +7,10 @@ version: 1.0.0
 status: 承認
 owner: SRE
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-OBY-001]]'
 - '[[RQ-AV-001]]'
-down:
-- '[[DD-LOG-001]]'
 related:
 - '[[BD-ARCH-003]]'
 tags:
@@ -20,7 +18,6 @@ tags:
 - BD
 - MON
 ---
-# BD-MON-001 監視設計（メトリクス/アラート）
 
 ## 主要SLI候補
 - API成功率（2xx/3xx）

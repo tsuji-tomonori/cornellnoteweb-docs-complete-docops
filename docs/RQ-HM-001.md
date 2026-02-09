@@ -7,16 +7,14 @@ version: 1.0.0
 status: 下書き
 owner: PM
 created: 2026-02-07
-updated: 2026-02-07
+updated: 2026-02-09
 up: []
-down: []
 related: []
 tags:
 - CornellNoteWeb
 - RQ
 - HOME
 ---
-# RQ-HM-001 ホーム
 
 ## 入口
 - [[Home]]

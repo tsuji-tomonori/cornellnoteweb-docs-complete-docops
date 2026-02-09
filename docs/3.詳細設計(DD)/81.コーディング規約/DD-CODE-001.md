@@ -7,18 +7,15 @@ version: 1.0.0
 status: 承認
 owner: 開発リード
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[BD-CM-001]]'
-down:
-- '[[UT-STAT-001]]'
 related: []
 tags:
 - CornellNoteWeb
 - DD
 - CODE
 ---
-# DD-CODE-001 コーディング規約（Java/Spring）
 
 ## 規約（抜粋）
 - フォーマット: Spotless（google-java-format）

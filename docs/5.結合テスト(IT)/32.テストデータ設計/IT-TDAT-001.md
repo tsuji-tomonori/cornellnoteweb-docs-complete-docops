@@ -7,10 +7,9 @@ version: 1.0.0
 status: 承認
 owner: QA
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[IT-PLAN-001]]'
-down: []
 related:
 - '[[IT-ENV-002]]'
 tags:
@@ -18,7 +17,6 @@ tags:
 - IT
 - TDAT
 ---
-# IT-TDAT-001 結合テストデータ設計
 
 ## 方式
 - 小規模: Seed APIで投入

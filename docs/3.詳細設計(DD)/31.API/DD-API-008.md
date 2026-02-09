@@ -7,11 +7,9 @@ version: 1.0.0
 status: 下書き
 owner: 開発リード
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-FR-017]]'
-down:
-- '[[AT-SCN-004]]'
 related:
 - '[[DD-DDL-008]]'
 tags:
@@ -20,7 +18,6 @@ tags:
 - API
 - EXPORT
 ---
-# DD-API-008 エクスポートAPI（PDF）
 
 ## POST /api/notes/{noteId}/export/pdf
 ### レスポンス（202 Accepted）

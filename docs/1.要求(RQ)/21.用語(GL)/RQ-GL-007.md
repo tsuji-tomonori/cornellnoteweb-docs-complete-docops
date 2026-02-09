@@ -7,10 +7,9 @@ version: 1.0.0
 status: 承認
 owner: プロダクトオーナー
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-SC-001]]'
-down: []
 related:
 - '[[RQ-SEC-001]]'
 - '[[DD-API-002]]'
@@ -20,7 +19,6 @@ tags:
 - GL
 - 用語
 ---
-# RQ-GL-007 セッション
 
 ## 定義
 ログイン状態を保持する仕組み。MVPではサーバセッション（HttpSession）を想定。

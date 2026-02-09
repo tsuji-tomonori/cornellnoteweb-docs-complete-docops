@@ -7,7 +7,7 @@ version: 1.0.0
 status: 承認
 owner: アーキテクト
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-09
 up:
 - '[[RQ-PC-001]]'
 - '[[RQ-RDR-001]]'
@@ -21,8 +21,6 @@ up:
 - '[[RQ-RDR-004]]'
 - '[[RQ-RDR-005]]'
 - '[[RQ-RDR-006]]'
-down:
-- '[[BD-ARCH-001]]'
 related:
 - '[[RQ-PC-001]]'
 - '[[BD-ARCH-002]]'
@@ -32,7 +30,6 @@ tags:
 - BD
 - ADR
 ---
-# BD-ADR-001 技術スタック採用
 
 ## ステータス
 - Accepted
