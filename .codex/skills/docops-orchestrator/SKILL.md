@@ -6,37 +6,49 @@ metadata:
 ---
 
 ## 目的
-自然言語で与えられた依頼を、Obsidian Vault の規約に従って反映し、リンクグラフ（`up/down/related`）上の **整合性を更新 or 確認**します。
+自然言語で与えられた依頼を、Obsidian Vault の規約に従って反映し、リンクグラフ（`up/related`）上の **整合性を更新 or 確認**します。
 
 ## 前提（必須）
-- ドキュメント関係（上位/下位/関連）は **Frontmatter の `up/down/related`** で管理する
+- ドキュメント関係（上位/下位/関連）は **Frontmatter の `up/related`** で管理する
 - 本文に「上位文書」「下位文書」セクションは作らない
 - 一覧/マトリックスは Dataview で生成し、手更新の表は作らない
+- **1スキル = 1ドキュメント（種別）** の対応を維持する（`doc-rq-fr`, `doc-bd-api` など）
 
-## 手順
+## ドキュメント改修フロー（標準）
 1. **対象の特定**
    - 依頼文にIDがあれば、それを優先（例: `RQ-FR-004`）
    - IDが無い場合は、タイトル/キーワードで検索して対象を確定する
 
-2. **対象ドキュメントの更新**
+2. **対応スキルの特定（1対1）**
+   - 対象IDのprefix/種別に対応する `doc-*` スキルを必ず選ぶ
+   - 対応スキルが存在しない場合は `$skill-maintainer` で追加してから改修する
+
+3. **対象ドキュメントの更新**
    - 規約（AGENTS.md）に従い、最小差分で更新
    - `updated` を当日に、内容変更なら `version` を patch up
    - `## 変更履歴` に追記
 
-3. **影響範囲の抽出（上位⇄下位）**
+4. **影響範囲の抽出（上位⇄下位）**
    - 更新したIDを起点に、影響範囲を抽出して `reports/` に保存
    - 例:
-     - `python .codex/skills/docops-orchestrator/scripts/impact.py --ids RQ-FR-004 --direction both --max-depth 3 --out reports/impact_RQ-FR-004.md`
+      - `python .codex/skills/docops-orchestrator/scripts/impact.py --ids RQ-FR-004 --direction both --max-depth 3 --out reports/impact_RQ-FR-004.md`
 
-4. **影響範囲の更新 or 確認**
+5. **影響範囲の更新 or 確認**
    - 影響がある（意味が変わる/矛盾する）場合: 該当ドキュメントも更新（最小差分）
    - 影響がない場合: `reports/impact_check_YYYY-MM-DD.md` に「確認済み」を記録
 
-5. **相互リンク整合の確定**
-   - `python .codex/skills/obsidian-doc-check/scripts/validate_vault.py --docs-root docs --fix-reciprocal --report reports/doc_check.md`
+6. **整合チェック**
+   - `python .codex/skills/obsidian-doc-check/scripts/validate_vault.py --docs-root docs --report reports/doc_check.md`
 
-6. **最終チェック**
+7. **最終チェック**
    - `$obsidian-doc-check` を実行し、`reports/` にレポートを残す
+
+## スキルメンテのタイミング
+- ドキュメント種別を新設/改名したとき
+- ドキュメント規約（Frontmatter必須項目、リンク規約、見出し規約）が変わったとき
+- `doc-*` スキルと実ドキュメントの内容に乖離が出たとき
+- ドキュメント改修PRで、テンプレ/手順/品質基準を更新したとき
+- 上記に該当したら同一PRで `$skill-maintainer` を実行してスキルを同期する
 
 ## ドキュメント別スキルの使い分け
 - 更新対象のID prefix に対応するスキルを参照して「書く/書かない」を守る

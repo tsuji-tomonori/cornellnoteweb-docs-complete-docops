@@ -3,7 +3,7 @@ id: BD-CM-001
 title: 構成管理方針（Git/Secrets/Docs）
 doc_type: 構成管理
 phase: BD
-version: 1.0.1
+version: 1.0.2
 status: 承認
 owner: 開発リード
 created: 2026-01-31
@@ -36,7 +36,14 @@ tags:
 - `docs/` をVaultとして扱う。
 - 1ファイル最小単位、ファイル名=ID、Frontmatterは `up/related` を必須とする（[[RQ-RTM-001]]）。
 - 親子方向は `up` と Backlink で追跡し、静的な下位一覧は持たない。
+- Codex skills は 1スキル=1ドキュメント種別で管理し、差分が出た場合は同一PRで更新する。
+
+## skillsメンテナンス方針
+- 種別追加/改名/廃止時に対応スキルを更新する。
+- ドキュメント規約変更時（Frontmatter、リンク、レビュー基準）は共通スキルも同時更新する。
+- メンテ手順は `skill-maintainer` を基準に実施する。
 
 ## 変更履歴
 - 2026-01-31: 初版
 - 2026-02-09: リンク規約を up/related + Backlink 運用に更新
+- 2026-02-09: skillsの1対1対応とメンテ方針を追加

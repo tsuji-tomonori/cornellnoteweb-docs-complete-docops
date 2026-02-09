@@ -6,12 +6,10 @@
 - Checks:
   * YAML frontmatter exists and required keys are present
   * filename == id
-  * up/down/related links refer to existing IDs
-  * reciprocal relations: A.down -> B implies B.up contains A (and vice versa for A.up -> P implies P.down contains A)
+  * up/related links refer to existing IDs
+  * up links can be traversed in Backlink direction (reverse index)
   * banned body sections: "## 上位文書" / "## 下位文書" / "## 関連文書" (relations must live in frontmatter)
   * banned files under docs/: README.md / TEMPLATE.md
-- Optional:
-  * --fix-reciprocal to auto-add missing reciprocal up/down links in frontmatter
 
 Usage:
   python validate_vault.py --docs-root docs --report reports/doc_check.md
@@ -39,7 +37,6 @@ REQUIRED_KEYS = [
     "created",
     "updated",
     "up",
-    "down",
     "related",
     "tags",
 ]
@@ -113,7 +110,6 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--docs-root", default="docs", help="docs root directory (default: docs)")
     ap.add_argument("--report", default="", help="write markdown report to this path (optional)")
-    ap.add_argument("--fix-reciprocal", action="store_true", help="auto-fix missing reciprocal up/down links")
     args = ap.parse_args()
 
     root = Path(".").resolve()
@@ -146,8 +142,7 @@ def main() -> int:
     # Checks
     issues: List[str] = []
     broken_links: List[str] = []
-    recipro_issues: List[str] = []
-    fixed: List[str] = []
+    backlink_issues: List[str] = []
 
     # Forbidden files are treated as issues.
     for p in forbidden_files:
@@ -183,10 +178,10 @@ def main() -> int:
         # banned relation sections in body
         for banned in ["## 上位文書", "## 下位文書", "## 関連文書"]:
             if banned in d.body:
-                issues.append(f"- {d.path}: contains banned section '{banned}' (use frontmatter up/down/related)")
+                issues.append(f"- {d.path}: contains banned section '{banned}' (use frontmatter up/related)")
 
         # link existence
-        for rel_key in ["up", "down", "related"]:
+        for rel_key in ["up", "related"]:
             targets = [normalize_link_id(t) for t in extract_links(d.frontmatter.get(rel_key))]
             for t in targets:
                 if not t:
@@ -194,59 +189,22 @@ def main() -> int:
                 if t not in id_to_doc:
                     broken_links.append(f"- {d.id}: {rel_key} -> [[{t}]] (NOT FOUND)")
 
-    # reciprocal checks + optional fixes
+    # Backlink check: every A.up -> P must be visible as reverse-up backlink at P.
+    reverse_up: Dict[str, List[str]] = {doc_id: [] for doc_id in id_to_doc}
     for d in docs:
         if not d.id:
             continue
         d_up = [normalize_link_id(t) for t in extract_links(d.frontmatter.get("up"))]
-        d_down = [normalize_link_id(t) for t in extract_links(d.frontmatter.get("down"))]
-
-        # A.up -> P requires P.down contains A
         for p_id in d_up:
             if p_id in id_to_doc:
-                p_doc = id_to_doc[p_id]
-                p_down = [normalize_link_id(t) for t in extract_links(p_doc.frontmatter.get("down"))]
-                if d.id not in p_down:
-                    msg = f"- reciprocal: {d.id}.up -> {p_id} but {p_id}.down missing {d.id}"
-                    recipro_issues.append(msg)
-                    if args.fix_reciprocal:
-                        # add to parent down
-                        down_list = p_doc.frontmatter.get("down")
-                        if not isinstance(down_list, list):
-                            down_list = []
-                        link = f"[[{d.id}]]"
-                        if link not in down_list and f'"{link}"' not in down_list:
-                            down_list.append(link)
-                        p_doc.frontmatter["down"] = down_list
-                        fixed.append(f"- FIX: add {p_id}.down += [[{d.id}]]")
+                reverse_up[p_id].append(d.id)
 
-        # A.down -> C requires C.up contains A
-        for c_id in d_down:
-            if c_id in id_to_doc:
-                c_doc = id_to_doc[c_id]
-                c_up = [normalize_link_id(t) for t in extract_links(c_doc.frontmatter.get("up"))]
-                if d.id not in c_up:
-                    msg = f"- reciprocal: {d.id}.down -> {c_id} but {c_id}.up missing {d.id}"
-                    recipro_issues.append(msg)
-                    if args.fix_reciprocal:
-                        up_list = c_doc.frontmatter.get("up")
-                        if not isinstance(up_list, list):
-                            up_list = []
-                        link = f"[[{d.id}]]"
-                        if link not in up_list and f'"{link}"' not in up_list:
-                            up_list.append(link)
-                        c_doc.frontmatter["up"] = up_list
-                        fixed.append(f"- FIX: add {c_id}.up += [[{d.id}]]")
-
-    # write back if fixed
-    if args.fix_reciprocal and fixed:
-        for d in docs:
-            if not d.id:
-                continue
-            # rebuild file with updated frontmatter; keep body as-is
-            fm_text = dump_frontmatter(d.frontmatter)
-            new_text = "---\n" + fm_text + "---\n" + d.body.lstrip("\n")
-            d.path.write_text(new_text, encoding="utf-8")
+    for p_id, children in reverse_up.items():
+        if p_id not in id_to_doc:
+            continue
+        for child_id in children:
+            if child_id not in id_to_doc:
+                backlink_issues.append(f"- backlink: {p_id} has reverse-up from {child_id}, but child is missing")
 
     # Build report
     lines: List[str] = []
@@ -258,8 +216,7 @@ def main() -> int:
     lines.append(f"- parse_errors: {len(parse_errors)}")
     lines.append(f"- issues: {len(issues)}")
     lines.append(f"- broken_links: {len(broken_links)}")
-    lines.append(f"- reciprocal_issues: {len(recipro_issues)}")
-    lines.append(f"- fixed: {len(fixed)} (fix-reciprocal={args.fix_reciprocal})")
+    lines.append(f"- backlink_issues: {len(backlink_issues)}")
     lines.append("")
 
     if parse_errors:
@@ -277,14 +234,9 @@ def main() -> int:
         lines.extend(broken_links)
         lines.append("")
 
-    if recipro_issues:
-        lines.append("## Reciprocal link issues (up/down)")
-        lines.extend(recipro_issues)
-        lines.append("")
-
-    if fixed:
-        lines.append("## Auto-fixes applied")
-        lines.extend(fixed)
+    if backlink_issues:
+        lines.append("## Backlink issues (reverse up)")
+        lines.extend(backlink_issues)
         lines.append("")
 
     report_text = "\n".join(lines).rstrip() + "\n"

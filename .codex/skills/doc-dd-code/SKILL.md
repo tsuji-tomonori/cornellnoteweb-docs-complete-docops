@@ -22,12 +22,12 @@ metadata:
 
 ## Obsidian項目（本文ではなくFrontmatterで管理）
 - `id/title/doc_type/phase/version/status/owner/created/updated`
-- `up/down/related`（本文に「上位文書」「下位文書」セクションを作らない）
+- `up/related`（本文に「上位文書」「下位文書」セクションを作らない）
 - `tags`（例: `DD`, `CODE`, `CornellNoteWeb`）
 
 ## 典型リンク（ドキュメント種別）
 - 上位（up）: BD-BUILD / BD-CM
-- 下位（down）: UT-STAT / UT-MET
+- 下位（Backlink）: UT-STAT / UT-MET
 - 関連（related）: （なし）
 
 ## 最低限の品質チェック

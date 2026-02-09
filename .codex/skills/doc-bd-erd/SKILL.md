@@ -21,12 +21,12 @@ metadata:
 
 ## Obsidian項目（本文ではなくFrontmatterで管理）
 - `id/title/doc_type/phase/version/status/owner/created/updated`
-- `up/down/related`（本文に「上位文書」「下位文書」セクションを作らない）
+- `up/related`（本文に「上位文書」「下位文書」セクションを作らない）
 - `tags`（例: `BD`, `ERD`, `CornellNoteWeb`）
 
 ## 典型リンク（ドキュメント種別）
 - 上位（up）: RQ-DM / RQ-DATA
-- 下位（down）: DD-DDL / DD-DBCON / DD-MIG
+- 下位（Backlink）: DD-DDL / DD-DBCON / DD-MIG
 - 関連（related）: RQ-PRC
 
 ## 最低限の品質チェック

@@ -3,7 +3,7 @@
 """Impact analysis for Obsidian vault docs.
 
 - Target: docs/**/*.md
-- Source of truth: YAML frontmatter `up/down/related` (Obsidian links)
+- Source of truth: YAML frontmatter `up/related` (Obsidian links)
 
 Examples:
   python impact.py --ids RQ-FR-004 --direction both --max-depth 3
@@ -94,6 +94,12 @@ def traverse(
 ) -> List[Tuple[int, str]]:
     """Return list of (depth, doc_id) excluding start nodes? include? We'll include start at depth 0."""
 
+    reverse_up: Dict[str, Set[str]] = {doc_id: set() for doc_id in id_to_doc}
+    for child_id, doc in id_to_doc.items():
+        for parent_id in doc.rel_ids("up"):
+            if parent_id in reverse_up:
+                reverse_up[parent_id].add(child_id)
+
     q: List[Tuple[int, str]] = [(0, s) for s in start_ids]
     seen: Set[str] = set()
     out: List[Tuple[int, str]] = []
@@ -114,7 +120,7 @@ def traverse(
         if direction in {"up", "both"}:
             nxt.extend(doc.rel_ids("up"))
         if direction in {"down", "both"}:
-            nxt.extend(doc.rel_ids("down"))
+            nxt.extend(sorted(reverse_up.get(cur, set())))
         if direction in {"related", "both"}:
             # related is treated as same-depth neighbors
             nxt.extend(doc.rel_ids("related"))
@@ -129,7 +135,8 @@ def traverse(
 def render_md(rows: List[Tuple[int, str]], id_to_doc: Dict[str, Doc], title: str) -> str:
     lines: List[str] = [f"# {title}", "", "|Depth|ID|Path|", "|---:|---|---|"]
     for depth, doc_id in rows:
-        p = id_to_doc.get(doc_id).path.as_posix() if doc_id in id_to_doc else "(NOT FOUND)"
+        doc = id_to_doc.get(doc_id)
+        p = doc.path.as_posix() if doc else "(NOT FOUND)"
         lines.append(f"|{depth}|{doc_id}|`{p}`|")
     return "\n".join(lines) + "\n"
 
@@ -163,7 +170,7 @@ def main() -> int:
             {
                 "depth": depth,
                 "id": doc_id,
-                "path": id_to_doc.get(doc_id).path.as_posix() if doc_id in id_to_doc else None,
+                "path": id_to_doc[doc_id].path.as_posix() if doc_id in id_to_doc else None,
             }
             for depth, doc_id in rows
         ]

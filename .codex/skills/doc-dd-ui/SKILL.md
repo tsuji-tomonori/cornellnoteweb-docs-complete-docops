@@ -22,12 +22,12 @@ UI詳細設計（画面/コンポーネント単位）を定義する。
 
 ## Obsidian項目（本文ではなくFrontmatterで管理）
 - `id/title/doc_type/phase/version/status/owner/created/updated`
-- `up/down/related`（本文に「上位文書」「下位文書」セクションを作らない）
+- `up/related`（本文に「上位文書」「下位文書」セクションを作らない）
 - `tags`（例: `DD`, `UI`, `CornellNoteWeb`）
 
 ## 典型リンク（ドキュメント種別）
 - 上位（up）: BD-UI / RQ-UC / RQ-UX
-- 下位（down）: UT-CASE / AT-SCN
+- 下位（Backlink）: UT-CASE / AT-SCN
 - 関連（related）: DD-API
 
 ## 最低限の品質チェック

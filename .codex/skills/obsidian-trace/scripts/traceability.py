@@ -5,7 +5,7 @@
 Reads docs/**/*.md (excluding README/TEMPLATE), parses YAML frontmatter, and
 builds a graph using:
   - up (parent)
-  - down (child)
+  - down (child, derived from other docs' up)
   - related (cross)
 
 Examples:
@@ -90,13 +90,19 @@ def build_graph(id_to: Dict[str, Dict[str, Any]]) -> Dict[str, Dict[str, Set[str
     for doc_id, v in id_to.items():
         fm = v["fm"]
         up = {normalize_link_id(x) for x in extract_links(fm.get("up"))}
-        down = {normalize_link_id(x) for x in extract_links(fm.get("down"))}
         related = {normalize_link_id(x) for x in extract_links(fm.get("related"))}
         g[doc_id] = {
             "up": {x for x in up if x},
-            "down": {x for x in down if x},
+            "down": set(),
             "related": {x for x in related if x},
         }
+
+    # Derive down edges from reverse up links.
+    for child_id, rels in g.items():
+        for parent_id in rels["up"]:
+            if parent_id in g:
+                g[parent_id]["down"].add(child_id)
+
     return g
 
 

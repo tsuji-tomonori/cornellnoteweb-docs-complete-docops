@@ -13,6 +13,7 @@ metadata:
 - Doneの定義（リンク整備含む）
 - チェック項目（本文/Frontmatter/リンク）
 - Dataview運用ルール
+- Codex skills の1対1対応ルールとメンテタイミング
 
 ## 何を書かないべきか
 - 個別要求の詳細（FRへ）
@@ -21,12 +22,12 @@ metadata:
 
 ## Obsidian項目（本文ではなくFrontmatterで管理）
 - `id/title/doc_type/phase/version/status/owner/created/updated`
-- `up/down/related`（本文に「上位文書」「下位文書」セクションを作らない）
+- `up/related`（本文に「上位文書」「下位文書」セクションを作らない）
 - `tags`（例: `RQ`, `DG`, `CornellNoteWeb`）
 
 ## 典型リンク（ドキュメント種別）
 - 上位（up）: RQ-SH / RQ-SC
-- 下位（down）: BD-ADR / BD-TST / AT-PLAN
+- 下位（Backlink）: BD-ADR / BD-TST / AT-PLAN / BD-CM
 - 関連（related）: RQ-RTM
 
 ## 最低限の品質チェック

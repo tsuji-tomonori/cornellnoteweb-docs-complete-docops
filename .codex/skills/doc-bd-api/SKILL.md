@@ -21,12 +21,12 @@ APIの基本設計（境界、責務、共通ルール）を定義する。
 
 ## Obsidian項目（本文ではなくFrontmatterで管理）
 - `id/title/doc_type/phase/version/status/owner/created/updated`
-- `up/down/related`（本文に「上位文書」「下位文書」セクションを作らない）
+- `up/related`（本文に「上位文書」「下位文書」セクションを作らない）
 - `tags`（例: `BD`, `API`, `CornellNoteWeb`）
 
 ## 典型リンク（ドキュメント種別）
 - 上位（up）: RQ-FR / RQ-SEC
-- 下位（down）: DD-API / UT-CASE / IT-CASE
+- 下位（Backlink）: DD-API / UT-CASE / IT-CASE
 - 関連（related）: BD-ARCH
 
 ## 最低限の品質チェック

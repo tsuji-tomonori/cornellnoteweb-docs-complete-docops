@@ -21,12 +21,12 @@ DBスキーマのDDLを定義する（DDL1件=1ファイル）。
 
 ## Obsidian項目（本文ではなくFrontmatterで管理）
 - `id/title/doc_type/phase/version/status/owner/created/updated`
-- `up/down/related`（本文に「上位文書」「下位文書」セクションを作らない）
+- `up/related`（本文に「上位文書」「下位文書」セクションを作らない）
 - `tags`（例: `DD`, `DDL`, `CornellNoteWeb`）
 
 ## 典型リンク（ドキュメント種別）
 - 上位（up）: BD-DATA / RQ-DM
-- 下位（down）: DD-DBCON / DD-MIG / UT-TDAT
+- 下位（Backlink）: DD-DBCON / DD-MIG / UT-TDAT
 - 関連（related）: DD-PERF
 
 ## 最低限の品質チェック

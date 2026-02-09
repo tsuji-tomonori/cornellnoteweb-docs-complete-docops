@@ -1,12 +1,12 @@
 ---
 name: obsidian-trace
-description: Obsidianリンク(up/down/related)からトレーサビリティをツリー/CSVで生成する
+description: Obsidianリンク(up/related)からトレーサビリティをツリー/CSVで生成する
 metadata:
-  short-description: Obsidianリンク(up/down/related)からトレーサビリティをツリー/CSVで生成する
+  short-description: Obsidianリンク(up/related)からトレーサビリティをツリー/CSVで生成する
 ---
 
 ## 目的
-Obsidianの `up/down/related` を利用して、指定IDからトレーサビリティを生成します。  
+Obsidianの `up/related` を利用して、指定IDからトレーサビリティを生成します。  
 （静的なRTMを手更新せず、必要なときに生成する用途）
 
 ## 使い方

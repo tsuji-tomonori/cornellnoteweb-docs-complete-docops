@@ -3,7 +3,7 @@ id: RQ-RTM-001
 title: Obsidianリンクでのトレーサビリティ運用
 doc_type: トレーサビリティ
 phase: RQ
-version: 1.0.1
+version: 1.0.2
 status: 承認
 owner: アーキテクト
 created: 2026-01-31
@@ -26,6 +26,7 @@ tags:
 1. **ファイル名＝ID**（例: `RQ-FR-004.md`）
 2. Frontmatter の `up/related` を必ず記載
 3. 一覧は作らない（READMEでリンクを集約するのはOK）
+4. Codex skills は **1スキル=1ドキュメント種別** で対応付ける
 
 ## たどり方（実例）
 - 例: 新規ノート作成
@@ -50,7 +51,9 @@ SORT file.name ASC
 ## 点検（レビュー時）
 - レビューでは、対象ドキュメントのBacklink数が不自然に少ない/多い場合にリンク漏れを疑う。
 - Doneの定義に「リンク整備」を含める（[[RQ-DG-001]]）。
+- スキル更新が必要な改修では、`skill-maintainer` で対応関係を同期する。
 
 ## 変更履歴
 - 2026-01-31: 初版
 - 2026-02-09: トレーサビリティ規約を up/related 前提に更新
+- 2026-02-09: skillsの1対1対応ルールを追記

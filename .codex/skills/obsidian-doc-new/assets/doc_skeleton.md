@@ -9,11 +9,9 @@ owner: {{owner}}
 created: {{date}}
 updated: {{date}}
 up: []
-down: []
 related: []
 tags: []
 ---
-# {{id}} {{title}}
 
 ## 本文
 TBD
