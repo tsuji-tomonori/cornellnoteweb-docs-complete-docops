@@ -1,0 +1,61 @@
+version: "3"
+
+vars:
+  ROOT_DIR: "{{.TASKFILE_DIR}}"
+  QUARTZ_DIR: "{{.ROOT_DIR}}/quartz"
+  INFRA_DIR: "{{.ROOT_DIR}}/infra"
+  SITE_ASSET_PATH: "{{.ROOT_DIR}}/quartz/public"
+  STACK: "QuartzSiteStack"
+  CDK_ARGS: ""
+
+tasks:
+  quartz:install:
+    desc: Quartzの依存関係をインストール
+    dir: "{{.QUARTZ_DIR}}"
+    cmds:
+      - npm ci
+
+  quartz:build:
+    desc: docsからQuartzのpublicを生成
+    dir: "{{.QUARTZ_DIR}}"
+    deps:
+      - quartz:install
+    cmds:
+      - npx quartz build -d ../docs
+
+  infra:install:
+    desc: CDKの依存関係をインストール
+    dir: "{{.INFRA_DIR}}"
+    cmds:
+      - npm ci
+
+  infra:build:
+    desc: CDK(TypeScript)をビルド
+    dir: "{{.INFRA_DIR}}"
+    deps:
+      - infra:install
+    cmds:
+      - npm run build
+
+  infra:synth:
+    desc: CDKテンプレートを生成
+    dir: "{{.INFRA_DIR}}"
+    deps:
+      - quartz:build
+      - infra:build
+    cmds:
+      - npm run synth -- --context siteAssetPath={{.SITE_ASSET_PATH}} {{.STACK}} {{.CDK_ARGS}}
+
+  infra:deploy:
+    desc: Quartz publicをCloudFrontへデプロイ
+    dir: "{{.INFRA_DIR}}"
+    deps:
+      - quartz:build
+      - infra:build
+    cmds:
+      - npm run deploy -- --context siteAssetPath={{.SITE_ASSET_PATH}} {{.STACK}} {{.CDK_ARGS}}
+
+  docs:deploy:
+    desc: ドキュメントのデプロイを一括実行（Quartz build + CDK deploy）
+    deps:
+      - infra:deploy
