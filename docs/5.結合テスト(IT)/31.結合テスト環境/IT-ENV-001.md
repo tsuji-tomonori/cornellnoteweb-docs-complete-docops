@@ -5,7 +5,7 @@ doc_type: 結合テスト環境
 phase: IT
 version: 1.0.0
 status: 承認
-owner: QA
+owner: QAリード
 created: 2026-01-31
 updated: 2026-02-09
 up:

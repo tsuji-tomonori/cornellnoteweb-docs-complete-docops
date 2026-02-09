@@ -30,6 +30,7 @@ metadata:
 
 4. **対象ドキュメントの更新**
    - 規約（AGENTS.md）に従い、最小差分で更新
+   - `doc_type/phase/version/status/owner` は値運用ルールに従って整合を確認（ownerは `RQ-SH-*` ロール限定）
    - `updated` を当日に、内容変更なら `version` を patch up
    - `## 変更履歴` に追記
 

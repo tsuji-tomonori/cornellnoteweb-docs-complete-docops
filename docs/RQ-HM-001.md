@@ -5,7 +5,7 @@ doc_type: ホーム
 phase: RQ
 version: 1.0.0
 status: 下書き
-owner: PM
+owner: プロダクトオーナー
 created: 2026-02-07
 updated: 2026-02-09
 up: []

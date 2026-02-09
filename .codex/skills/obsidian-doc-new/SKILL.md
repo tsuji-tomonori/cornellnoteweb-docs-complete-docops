@@ -21,9 +21,15 @@ metadata:
    - 例: `python .codex/skills/obsidian-doc-new/scripts/next_id.py RQ-FR --json`
 
 3. **ファイル作成**
-   - ファイル名 = ID（例: `RQ-FR-010.md`）
-   - Frontmatter を規約どおりに作成（`created/updated` は当日）
-   - 本文は最小限でもよいが、後続作業ができるよう **TBDを明示**する
+    - ファイル名 = ID（例: `RQ-FR-010.md`）
+    - Frontmatter を規約どおりに作成（`created/updated` は当日）
+    - Frontmatter値ルール:
+      - `doc_type`: 役割名を記載し、同種別で表記ゆれを作らない
+      - `phase`: `RQ/BD/DD/UT/IT/AT` のいずれかで、ID prefix と一致
+      - `version`: `MAJOR.MINOR.PATCH`（新規は原則 `1.0.0`）
+      - `status`: `下書き` または `承認`（無効化時のみ `廃止`）
+      - `owner`: `RQ-SH-*` で定義された責務ロールのみ（未定義ロールは先にSHへ追加）
+    - 本文は最小限でもよいが、後続作業ができるよう **TBDを明示**する
 
 4. **リンク整備**
     - `up/related` を記載し、可能なら相互リンク（関連文書側の `related` 追記など）も整える

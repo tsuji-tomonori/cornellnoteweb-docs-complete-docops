@@ -5,7 +5,7 @@ doc_type: 監視
 phase: BD
 version: 1.0.0
 status: 承認
-owner: SRE
+owner: 運用担当（SRE/運用）
 created: 2026-01-31
 updated: 2026-02-09
 up:

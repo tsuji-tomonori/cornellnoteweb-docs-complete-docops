@@ -5,7 +5,7 @@ doc_type: セキュリティ（設計）
 phase: BD
 version: 1.0.0
 status: 承認
-owner: セキュリティ担当
+owner: セキュリティ/プライバシー担当
 created: 2026-01-31
 updated: 2026-02-09
 up:
