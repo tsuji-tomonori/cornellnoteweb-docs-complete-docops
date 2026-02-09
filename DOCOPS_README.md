@@ -33,7 +33,7 @@ codex
 ```
 
 - スキル一覧: `/skills`
-- 例: 既存ドキュメント更新（影響確認まで）  
+- 例: 既存ドキュメント更新（影響確認まで）
   `"$docops-orchestrator RQ-FR-001 の受入基準に「Aの場合はBする」を追加して"`
 
 ### 2) 非対話（スクリプト/CI）
@@ -63,5 +63,5 @@ codex exec --full-auto "$docops-orchestrator\nRQ-FR-001 の受入基準を追記
 
 ---
 
-> NOTE: 本SkillPackは「1トピック=1ファイル」「Obsidianリンクによるトレーサビリティ」を前提に設計しています。  
+> NOTE: 本SkillPackは「1トピック=1ファイル」「Obsidianリンクによるトレーサビリティ」を前提に設計しています。
 > 既存の運用が違う場合は `AGENTS.md` をあなたのルールに合わせて調整してください。

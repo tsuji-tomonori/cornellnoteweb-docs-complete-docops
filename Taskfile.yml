@@ -9,6 +9,11 @@ vars:
   CDK_ARGS: ""
 
 tasks:
+  precommit:
+    desc: Enable git pre-commit hooks
+    cmds:
+      - pre-commit install
+
   quartz:install:
     desc: Quartzの依存関係をインストール
     dir: "{{.QUARTZ_DIR}}"
