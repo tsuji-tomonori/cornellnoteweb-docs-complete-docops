@@ -6,7 +6,7 @@ metadata:
 ---
 
 ## 目的
-コミットメッセージ品質をそろえるため、リポジトリ直下の `/.gitmessage` を必ず参照してコミットを作成する。
+コミットメッセージ品質をそろえるため、リポジトリ直下の `/.gitmessage` を必ず参照し、Conventional Commitsでコミットを作成する。
 
 ## 前提
 - 空コミットは作成しない
@@ -21,7 +21,8 @@ metadata:
 
 2. **メッセージ草案作成**
    - `/.gitmessage` の見出しに沿って、件名・背景/目的・変更内容・影響範囲を埋める
-   - 件名は 50 文字程度で簡潔にする
+   - 件名は `type(scope)!: subject` 形式で作成する（Conventional Commits）
+   - `type` は `feat` / `fix` / `docs` / `refactor` / `test` / `chore` を使用する
 
 3. **ステージングとコミット**
    - 必要ファイルを `git add` する
@@ -33,4 +34,4 @@ metadata:
    - `git status --short` が想定どおりか確認
 
 ## 出力
-- 規約に沿ったコミット（件名 + 背景/目的 + 変更内容 + 影響範囲）
+- Conventional Commits + `.gitmessage` 構成に沿ったコミット

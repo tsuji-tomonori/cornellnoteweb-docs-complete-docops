@@ -3,7 +3,7 @@ id: BD-CM-001
 title: 構成管理方針（Git/Secrets/Docs）
 doc_type: 構成管理
 phase: BD
-version: 1.0.6
+version: 1.0.7
 status: 承認
 owner: 開発リード
 created: 2026-01-31
@@ -46,6 +46,7 @@ tags:
 - SnowCardの必須記載項目は、要求/設計資料と `doc-rq-*` スキルで明文化する。
 - Frontmatter主要項目（doc_type/phase/version/status/owner）の値運用ルールは、要求/設計資料と共通スキルに反映する。
 - owner値は `RQ-SH-*` に定義された責務ロールのみを許可し、未定義ロールは先にSHへ追加する。
+- コミットメッセージは Conventional Commits（`type(scope)!: subject`）へ統一し、`/.gitmessage` を利用する。
 
 ## 変更履歴
 - 2026-01-31: 初版
@@ -55,3 +56,4 @@ tags:
 - 2026-02-09: SnowCard必須記載項目の明文化先を追加
 - 2026-02-09: Frontmatter主要項目の値運用ルール反映を追加
 - 2026-02-09: ownerのSHロール限定ルールを追加
+- 2026-02-09: Conventional Commits運用ルールを追加

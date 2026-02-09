@@ -16,6 +16,8 @@ metadata:
 - 要求記述ルールに関わる制約では、SnowCardの必須記載項目を明文化する
 - Frontmatter値運用に関わる制約では、`doc_type/phase/version/status/owner` の値ルールを明文化する
 - `owner` は `RQ-SH-*` で定義された責務ロール限定であることを明記する
+- 優先度は RFC 2119（`MUST` / `SHOULD` / `MAY`）を使用することを明記する
+- コミットメッセージは Conventional Commits を使用することを明記する
 
 ## 何を書かないべきか
 - 制約を『要望』として混ぜる

@@ -26,7 +26,7 @@ metadata:
     - Frontmatter値ルール:
       - `doc_type`: 役割名を記載し、同種別で表記ゆれを作らない
       - `phase`: `RQ/BD/DD/UT/IT/AT` のいずれかで、ID prefix と一致
-      - `version`: `MAJOR.MINOR.PATCH`（新規は原則 `1.0.0`）
+      - `version`: Semantic Versioning（`MAJOR.MINOR.PATCH`、新規は原則 `1.0.0`）
       - `status`: `下書き` または `承認`（無効化時のみ `廃止`）
       - `owner`: `RQ-SH-*` で定義された責務ロールのみ（未定義ロールは先にSHへ追加）
     - 本文は最小限でもよいが、後続作業ができるよう **TBDを明示**する
@@ -49,4 +49,5 @@ metadata:
 ## 参考テンプレ
 - SnowCardテンプレ: `assets/snowcard_ja.md`
 - SnowCardテンプレは必須記載項目（要求ID/種別/優先度/要求/根拠/受入基準/例外/関連）を示す
+- SnowCardの優先度は RFC 2119（`MUST` / `SHOULD` / `MAY`）を使う
 - DocPathMap（prefix→ディレクトリ）: `assets/doc_path_map.yaml`（必要ならあなたの構成に合わせて編集）

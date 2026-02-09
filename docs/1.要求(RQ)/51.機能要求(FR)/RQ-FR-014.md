@@ -23,7 +23,7 @@ tags:
 ## SnowCard（日本語）
 - **要求ID**: RQ-FR-014
 - **種別**: 機能要求
-- **優先度**: Could
+- **優先度**: MAY
 - **要求**: 本システムは、/api/notes/{noteId}/share POST で共有リンク（ShareToken）を発行できる（ノート単位）。
 - **根拠**: 外部閲覧共有。
 - **受入基準**:

@@ -3,7 +3,7 @@ id: RQ-RDR-008
 title: Frontmatter主要項目の値運用を標準化
 doc_type: 要求決定記録
 phase: RQ
-version: 1.0.1
+version: 1.0.2
 status: 承認
 owner: プロダクトオーナー
 created: 2026-02-09
@@ -36,7 +36,9 @@ tags:
 ## 影響/フォローアップ
 - ルールを要求資料（[[RQ-PC-008]] / [[RQ-DG-001]]）とskillsに反映する。
 - `owner` は `RQ-SH-*` で定義された責務ロールに限定する。
+- `version` は Semantic Versioning 準拠で更新する。
 
 ## 変更履歴
 - 2026-02-09: 初版
 - 2026-02-09: ownerのSHロール限定ルールを追記
+- 2026-02-09: versionのSemVer運用ルールを追記

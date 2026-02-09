@@ -31,7 +31,8 @@ metadata:
 4. **対象ドキュメントの更新**
    - 規約（AGENTS.md）に従い、最小差分で更新
    - `doc_type/phase/version/status/owner` は値運用ルールに従って整合を確認（ownerは `RQ-SH-*` ロール限定）
-   - `updated` を当日に、内容変更なら `version` を patch up
+   - `updated` を当日に、内容変更なら `version` を patch up（Semantic Versioning）
+   - 要求系では SnowCard優先度を RFC 2119（`MUST` / `SHOULD` / `MAY`）で統一
    - `## 変更履歴` に追記
 
 5. **影響範囲の抽出（上位⇄下位）**
@@ -48,6 +49,7 @@ metadata:
 
 8. **最終チェック**
    - `$obsidian-doc-check` を実行し、`reports/` にレポートを残す
+   - コミットが必要な場合は `git-commit` スキルを使い、Conventional Commitsで作成する
 
 ## スキルメンテのタイミング
 - ドキュメント種別を新設/改名したとき

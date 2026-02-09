@@ -22,7 +22,7 @@ metadata:
    - ドキュメントの構造（見出し、節）をできるだけ維持し、必要箇所のみ更新
     - Frontmatter:
       - `updated` を当日の日付に更新
-      - 内容変更なら `version` を patch up（`1.0.0 -> 1.0.1`）
+      - 内容変更なら `version` を patch up（Semantic Versioning、`1.0.0 -> 1.0.1`）
       - `doc_type`: 同種別で表記ゆれを作らない
       - `phase`: `RQ/BD/DD/UT/IT/AT` かつID prefixと一致
       - `status`: `下書き` / `承認` / `廃止` の運用ルールに従う
@@ -39,7 +39,10 @@ metadata:
     - `related` は必要に応じて相互化する（`A.related` に `B` を追加したら `B.related` に `A` を追加）
     - 新規ドキュメントが必要なら `$obsidian-doc-new` を使用して作成する
 
-5. **整合チェック**
+5. **要求記述の整合（SnowCard）**
+   - 要求系ドキュメントでは、優先度を RFC 2119（`MUST` / `SHOULD` / `MAY`）で記載する
+
+6. **整合チェック**
    - 変更後に `$obsidian-doc-check` を実行し、`reports/` にレポートを保存する
    - 重大な不整合が出たら、可能な範囲で修正して再実行する
 

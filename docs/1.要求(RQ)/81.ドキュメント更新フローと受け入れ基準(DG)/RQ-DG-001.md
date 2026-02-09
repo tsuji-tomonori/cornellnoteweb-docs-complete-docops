@@ -3,7 +3,7 @@ id: RQ-DG-001
 title: ドキュメント更新フローと受け入れ基準
 doc_type: ドキュメントガバナンス
 phase: RQ
-version: 1.0.7
+version: 1.0.9
 status: 承認
 owner: アーキテクト
 created: 2026-01-31
@@ -14,6 +14,7 @@ related:
 - '[[RQ-RTM-001]]'
 - '[[RQ-PC-007]]'
 - '[[RQ-PC-008]]'
+- '[[RQ-PC-009]]'
 tags:
 - CornellNoteWeb
 - RQ
@@ -57,7 +58,7 @@ flowchart TD
 ## SnowCard必須項目ガイド
 - **要求ID**: `RQ-FR-001` のように一意なIDを記載する。
 - **種別**: 機能要求/非機能要求/制約などの分類を記載する。
-- **優先度**: Must/Should/Could/Won't のいずれかを記載する。
+- **優先度**: RFC 2119 に従い `MUST` / `SHOULD` / `MAY` のいずれかを記載する。
 - **要求**: 主語・条件・期待結果が分かる1文で記載する。
 - **根拠**: 要求が必要な背景（価値、リスク、制約）を記載する。
 - **受入基準**: 観測可能で検証可能な条件を箇条書きで記載する。
@@ -67,7 +68,7 @@ flowchart TD
 ## Frontmatter値運用ガイド
 - **doc_type**: 役割名を記載し、同種別で表記ゆれを作らない。
 - **phase**: `RQ/BD/DD/UT/IT/AT` のいずれかを使用し、ID prefix と一致させる。
-- **version**: `MAJOR.MINOR.PATCH` 形式。意味変更時は `PATCH` を更新する。
+- **version**: Semantic Versioning（`MAJOR.MINOR.PATCH`）形式。意味変更時は `PATCH` を更新する。
 - **status**: `下書き` / `承認` を使用し、無効化時のみ `廃止` を使う。
 - **owner**: `RQ-SH-*` で定義された責務ロールのみを記載する。
 
@@ -75,6 +76,10 @@ flowchart TD
 - ドキュメント改修は、対象種別に対応する `doc-*` スキルを起点に実施する（1スキル=1ドキュメント種別）。
 - 新規種別を追加した場合は、同一PRで対応スキルを新規作成する。
 - スキル更新が必要な場合は `[[RQ-RTM-001]]` と `[[BD-CM-001]]` の規約と整合させる。
+
+## コミットメッセージ規約
+- 変更をコミットする場合は Conventional Commits（`type(scope)!: subject`）を使用する。
+- 実運用は `/.gitmessage` と `git-commit` スキルに従う。
 
 ## skillsメンテタイミング
 - ドキュメント種別の新設/改名/廃止時
@@ -91,3 +96,5 @@ flowchart TD
 - 2026-02-09: SnowCard必須項目の具体的な記載ガイドを追記
 - 2026-02-09: Frontmatter主要項目の値運用ガイドを追記（RQ-PC-008）
 - 2026-02-09: ownerをSH定義ロール限定へ更新
+- 2026-02-09: SemVer / RFC2119 / Conventional Commits の運用ルールを追記
+- 2026-02-09: Conventional Commits の制約文書（RQ-PC-009）を関連付け

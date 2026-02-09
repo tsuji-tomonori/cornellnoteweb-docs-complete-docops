@@ -1,5 +1,7 @@
-# 件名（50文字程度、命令形・現在形）
-# 例: 要求と設計の決定記録ゲートを必須化
+# 件名（Conventional Commits）
+# 形式: type(scope)!: subject
+# 例: docs(rq): SnowCard優先度をRFC2119に統一
+# type: feat|fix|docs|refactor|test|chore
 
 #
 # 背景/目的（なぜ）

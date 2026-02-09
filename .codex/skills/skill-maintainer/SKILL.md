@@ -16,6 +16,8 @@ metadata:
 - 要求追加時のRDR必須、設計追加時のADR必須ルールを導入/変更したとき
 - Frontmatter主要項目（doc_type/phase/version/status/owner）の値運用ルールを導入/変更したとき
 - ownerの許容値（`RQ-SH-*` で定義された責務ロール）を導入/変更したとき
+- version運用（Semantic Versioning）や優先度表記（RFC 2119）を導入/変更したとき
+- コミットメッセージ規約（Conventional Commits）を導入/変更したとき
 
 ## 手順
 1. **変更対象の特定**
