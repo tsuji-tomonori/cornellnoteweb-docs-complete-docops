@@ -3,7 +3,7 @@ id: RQ-DG-001
 title: ドキュメント更新フローと受け入れ基準
 doc_type: ドキュメントガバナンス
 phase: RQ
-version: 1.0.2
+version: 1.0.3
 status: 承認
 owner: アーキテクト
 created: 2026-01-31
@@ -29,9 +29,12 @@ flowchart TD
   C --> D[up/related を更新]
   D --> E[レビュー依頼]
   E --> F{承認?}
-  F -- Yes --> G[mainへマージ]
+  F -- Yes --> G{変更種別}
   F -- No --> C
-  G --> H[必要ならADR/RDR追記]
+  G -- 要求追加/意味変更 --> H[RDRを新規/更新]
+  G -- 設計追加/意味変更 --> I[ADRを新規/更新]
+  H --> J[mainへマージ]
+  I --> J
 ```
 
 ## 受入基準（Definition of Done）
@@ -39,7 +42,9 @@ flowchart TD
 - ファイル名＝ID、Frontmatterに `up/related` がある
 - 図はMermaid、一覧は個別ファイルへのリンク集である
 - 変更が要求/設計/テストのどこに影響するかがリンクで辿れる
-- 重要判断は ADR（[[BD-ADR-001]]）または RDR（[[RQ-RDR-001]]）に残っている
+- 要求の追加/意味変更は RDR（[[RQ-RDR-001]]）が同一PRに含まれる
+- 設計の追加/意味変更は ADR（[[BD-ADR-001]]）が同一PRに含まれる
+- 要求起点の設計は `RDR -> ADR -> 設計本文` で辿れる
 
 ## レビュー観点
 - **リンクの整合**: `up` と Backlink で双方向に辿れるか
@@ -61,3 +66,4 @@ flowchart TD
 - 2026-01-31: 初版
 - 2026-02-09: 受入基準を up/related と Backlink 前提に更新
 - 2026-02-09: Codex skills の1対1対応とメンテタイミングを追記
+- 2026-02-09: 要求追加はRDR必須、設計追加はADR必須のゲートを追加

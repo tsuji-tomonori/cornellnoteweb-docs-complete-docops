@@ -3,7 +3,7 @@ id: RQ-RTM-001
 title: Obsidianリンクでのトレーサビリティ運用
 doc_type: トレーサビリティ
 phase: RQ
-version: 1.0.2
+version: 1.0.3
 status: 承認
 owner: アーキテクト
 created: 2026-01-31
@@ -27,6 +27,7 @@ tags:
 2. Frontmatter の `up/related` を必ず記載
 3. 一覧は作らない（READMEでリンクを集約するのはOK）
 4. Codex skills は **1スキル=1ドキュメント種別** で対応付ける
+5. 要求追加は `RDR -> 要求本文`、設計追加は `RDR -> ADR -> 設計本文` の経路を必須にする
 
 ## たどり方（実例）
 - 例: 新規ノート作成
@@ -57,3 +58,4 @@ SORT file.name ASC
 - 2026-01-31: 初版
 - 2026-02-09: トレーサビリティ規約を up/related 前提に更新
 - 2026-02-09: skillsの1対1対応ルールを追記
+- 2026-02-09: RDR/ADR必須のトレース経路を追記

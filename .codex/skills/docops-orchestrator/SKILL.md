@@ -23,24 +23,29 @@ metadata:
    - 対象IDのprefix/種別に対応する `doc-*` スキルを必ず選ぶ
    - 対応スキルが存在しない場合は `$skill-maintainer` で追加してから改修する
 
-3. **対象ドキュメントの更新**
+3. **決定記録ゲート（必須）**
+   - 要求の追加/意味変更がある場合は、同一PRで `RQ-RDR-*` を新規作成または更新する
+   - 設計の追加/意味変更がある場合は、同一PRで `BD-ADR-*` を新規作成または更新する
+   - 要求起点の設計変更は `RDR -> ADR -> 設計本文` のリンク経路を必須にする
+
+4. **対象ドキュメントの更新**
    - 規約（AGENTS.md）に従い、最小差分で更新
    - `updated` を当日に、内容変更なら `version` を patch up
    - `## 変更履歴` に追記
 
-4. **影響範囲の抽出（上位⇄下位）**
+5. **影響範囲の抽出（上位⇄下位）**
    - 更新したIDを起点に、影響範囲を抽出して `reports/` に保存
    - 例:
       - `python .codex/skills/docops-orchestrator/scripts/impact.py --ids RQ-FR-004 --direction both --max-depth 3 --out reports/impact_RQ-FR-004.md`
 
-5. **影響範囲の更新 or 確認**
+6. **影響範囲の更新 or 確認**
    - 影響がある（意味が変わる/矛盾する）場合: 該当ドキュメントも更新（最小差分）
    - 影響がない場合: `reports/impact_check_YYYY-MM-DD.md` に「確認済み」を記録
 
-6. **整合チェック**
+7. **整合チェック**
    - `python .codex/skills/obsidian-doc-check/scripts/validate_vault.py --docs-root docs --report reports/doc_check.md`
 
-7. **最終チェック**
+8. **最終チェック**
    - `$obsidian-doc-check` を実行し、`reports/` にレポートを残す
 
 ## スキルメンテのタイミング

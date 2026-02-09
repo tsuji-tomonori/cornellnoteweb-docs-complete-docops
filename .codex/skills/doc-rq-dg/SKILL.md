@@ -14,6 +14,7 @@ metadata:
 - チェック項目（本文/Frontmatter/リンク）
 - Dataview運用ルール
 - Codex skills の1対1対応ルールとメンテタイミング
+- 要求追加=RDR必須、設計追加=ADR必須のゲート
 
 ## 何を書かないべきか
 - 個別要求の詳細（FRへ）
