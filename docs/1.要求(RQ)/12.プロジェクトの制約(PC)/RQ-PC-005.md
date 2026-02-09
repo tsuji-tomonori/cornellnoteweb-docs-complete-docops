@@ -3,7 +3,7 @@ id: RQ-PC-005
 title: Obsidian運用（リンク中心）
 doc_type: プロジェクトの制約
 phase: RQ
-version: 1.0.0
+version: 1.0.1
 status: 承認
 owner: プロダクトオーナー
 created: 2026-01-31
@@ -20,7 +20,7 @@ tags:
 ---
 
 ## 制約内容
-- up/down/related のリンク規約を守る。
+- up/related のリンク規約を守る。
 - Backlinkで辿れる粒度に分割する（一覧ファイルは禁止）。
 
 ## 根拠
@@ -31,3 +31,4 @@ tags:
 
 ## 変更履歴
 - 2026-01-31: 初版
+- 2026-02-09: リンク規約を up/related 前提に更新

@@ -3,7 +3,7 @@ id: RQ-RTM-001
 title: Obsidianリンクでのトレーサビリティ運用
 doc_type: トレーサビリティ
 phase: RQ
-version: 1.0.0
+version: 1.0.1
 status: 承認
 owner: アーキテクト
 created: 2026-01-31
@@ -20,11 +20,11 @@ tags:
 
 ## 結論（確認）
 - **要求トレーサビリティマトリックス（静的RTM）は必須ではありません。**
-- 本リポジトリでは、各ドキュメントが `up/down/related` を持つことで、Obsidianの **Backlink** と **検索** によりトレーサビリティを担保します。
+- 本リポジトリでは、各ドキュメントが `up/related` を持つことで、Obsidianの **Backlink** と **検索** によりトレーサビリティを担保します。
 
 ## 運用ルール（必須）
 1. **ファイル名＝ID**（例: `RQ-FR-004.md`）
-2. Frontmatter の `up/down/related` を必ず記載
+2. Frontmatter の `up/related` を必ず記載
 3. 一覧は作らない（READMEでリンクを集約するのはOK）
 
 ## たどり方（実例）
@@ -41,7 +41,7 @@ tags:
 - 例（Dataviewの擬似例）:
 
 ```dataview
-TABLE file.name as "ID", up as "上位", down as "下位"
+TABLE file.name as "ID", up as "上位", related as "関連"
 FROM "docs"
 WHERE contains(phase, "RQ")
 SORT file.name ASC
@@ -53,3 +53,4 @@ SORT file.name ASC
 
 ## 変更履歴
 - 2026-01-31: 初版
+- 2026-02-09: トレーサビリティ規約を up/related 前提に更新
