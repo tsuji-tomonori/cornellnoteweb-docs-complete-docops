@@ -3,9 +3,9 @@ id: BD-DEP-001
 title: デプロイ方式（ローカル/クラウド）
 doc_type: デプロイ
 phase: BD
-version: 1.0.2
+version: 1.0.3
 status: 承認
-owner: 運用担当（SRE/運用）
+owner: RQ-SH-003
 created: 2026-01-31
 updated: 2026-02-09
 up:
@@ -14,6 +14,7 @@ up:
 related:
 - '[[BD-ARCH-003]]'
 - '[[BD-ADR-007]]'
+- '[[BD-ADR-008]]'
 tags:
 - CornellNoteWeb
 - BD
@@ -25,9 +26,14 @@ tags:
 
 ## クラウド（想定）
 - AWS CDK によりスタックを構築（infra/）
-- API Gateway + Lambda（API/Worker）
+- CloudFront + Lambda Function URL（OAC/AWS_IAM）
+- Lambda（Spring Boot SSR + AWS Lambda Web Adapter）
 - Aurora(PostgreSQL) + S3 + SQS + CloudWatch + Secrets Manager
 - ドキュメントは Quartzで `quartz/public` を生成し、CDKの `siteAssetPath` としてCloudFront配信へ反映する
+
+## 運用上の注意（Function URL + OAC）
+- CloudFront 経由の POST/PUT は `x-amz-content-sha256` ヘッダーが必須。
+- フォーム送信はブラウザ標準 POST ではなく、JavaScript `fetch` で SHA256 を付与して送信する。
 
 ## ドキュメントのデプロイ手順
 - 標準手順は `Taskfile.yml` の `docs:deploy` を使用する
@@ -48,3 +54,4 @@ tags:
 - 2026-01-31: 初版
 - 2026-02-09: Quartz public生成とCDK deploy連携手順を追加
 - 2026-02-09: ドキュメントのデプロイ表現へ統一
+- 2026-02-09: CloudFront + Function URL(OAC) のインフラ構成とPOST要件を追記

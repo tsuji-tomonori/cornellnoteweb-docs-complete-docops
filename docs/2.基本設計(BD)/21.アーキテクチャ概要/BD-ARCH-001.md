@@ -3,9 +3,9 @@ id: BD-ARCH-001
 title: システムコンテキスト
 doc_type: アーキテクチャ概要（コンテキスト）
 phase: BD
-version: 1.0.0
+version: 1.0.1
 status: 承認
-owner: アーキテクト
+owner: RQ-SH-005
 created: 2026-01-31
 updated: 2026-02-09
 up:
@@ -18,6 +18,7 @@ up:
 - '[[BD-ADR-006]]'
 related:
 - '[[BD-ADR-002]]'
+- '[[BD-ADR-008]]'
 tags:
 - CornellNoteWeb
 - BD
@@ -50,7 +51,8 @@ flowchart LR
 
 ## 補足
 - ローカル環境は `docker-compose.yml` により `db`/`migrate`/`app` を起動する（[[BD-ENV-001]]）。
-- AWS環境では API Gateway + Lambda（API/Worker）+ Aurora + S3 + SQS を想定（infra/ 参照）。
+- AWS環境では CloudFront + Lambda Function URL（OAC/AWS_IAM）+ Lambda（Spring Boot SSR/LWA）+ Aurora + S3 + SQS を想定（infra/ 参照）。
 
 ## 変更履歴
 - 2026-01-31: 初版
+- 2026-02-09: AWS想定の入口構成を CloudFront + Function URL に更新
