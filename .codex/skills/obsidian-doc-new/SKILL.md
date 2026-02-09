@@ -42,4 +42,5 @@ metadata:
 
 ## 参考テンプレ
 - SnowCardテンプレ: `assets/snowcard_ja.md`
+- SnowCardテンプレは必須記載項目（要求ID/種別/優先度/要求/根拠/受入基準/例外/関連）を示す
 - DocPathMap（prefix→ディレクトリ）: `assets/doc_path_map.yaml`（必要ならあなたの構成に合わせて編集）

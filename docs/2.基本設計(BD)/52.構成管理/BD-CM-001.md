@@ -3,7 +3,7 @@ id: BD-CM-001
 title: 構成管理方針（Git/Secrets/Docs）
 doc_type: 構成管理
 phase: BD
-version: 1.0.3
+version: 1.0.4
 status: 承認
 owner: 開発リード
 created: 2026-01-31
@@ -43,9 +43,11 @@ tags:
 - ドキュメント規約変更時（Frontmatter、リンク、レビュー基準）は共通スキルも同時更新する。
 - メンテ手順は `skill-maintainer` を基準に実施する。
 - 要求追加/意味変更はRDR必須、設計追加/意味変更はADR必須の運用をスキルにも反映する。
+- SnowCardの必須記載項目は、要求/設計資料と `doc-rq-*` スキルで明文化する。
 
 ## 変更履歴
 - 2026-01-31: 初版
 - 2026-02-09: リンク規約を up/related + Backlink 運用に更新
 - 2026-02-09: skillsの1対1対応とメンテ方針を追加
 - 2026-02-09: RDR/ADR必須ゲートをskillsメンテ方針に追加
+- 2026-02-09: SnowCard必須記載項目の明文化先を追加
