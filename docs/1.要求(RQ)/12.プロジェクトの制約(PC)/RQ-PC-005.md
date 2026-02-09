@@ -1,0 +1,37 @@
+---
+id: RQ-PC-005
+title: Obsidian運用（リンク中心）
+doc_type: プロジェクトの制約
+phase: RQ
+version: 1.0.0
+status: 承認
+owner: プロダクトオーナー
+created: 2026-01-31
+updated: 2026-01-31
+up:
+- '[[RQ-SC-001]]'
+down:
+- '[[BD-ADR-001]]'
+- '[[BD-ENV-001]]'
+related:
+- '[[RQ-SEC-001]]'
+- '[[RQ-PRC-001]]'
+tags:
+- CornellNoteWeb
+- RQ
+- PC
+---
+# RQ-PC-005 Obsidian運用（リンク中心）
+
+## 制約内容
+- up/down/related のリンク規約を守る。
+- Backlinkで辿れる粒度に分割する（一覧ファイルは禁止）。
+
+## 根拠
+- トレーサビリティを自動化するため。
+
+## 影響
+- 技術/運用の自由度が制限されるため、例外が必要な場合は [[RQ-RDR-001]]（要求決定記録）として残す。
+
+## 変更履歴
+- 2026-01-31: 初版
