@@ -3,7 +3,7 @@ id: RQ-RDR-009
 title: コミットメッセージをConventional Commitsへ統一
 doc_type: 要求決定記録
 phase: RQ
-version: 1.0.0
+version: 1.0.1
 status: 承認
 owner: 開発リード
 created: 2026-02-09
@@ -35,6 +35,8 @@ tags:
 ## 影響/フォローアップ
 - `/.gitmessage` と `git-commit` スキルをConventional Commits前提で更新する。
 - 制約文書（[[RQ-PC-009]]）と運用フロー（[[RQ-DG-001]]）へ反映する。
+- コミットメッセージの `subject` と本文は日本語で統一する。
 
 ## 変更履歴
 - 2026-02-09: 初版
+- 2026-02-09: コミットメッセージ本文言語を日本語へ追記

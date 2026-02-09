@@ -112,4 +112,5 @@ Codex は変更内容に応じて、次の「役割」を意識して文書品�
 ## 10. コミットメッセージ規約
 - コミットメッセージは Conventional Commits（`type(scope)!: subject`）に従う。
 - `type` は `feat` / `fix` / `docs` / `refactor` / `test` / `chore` などを使用する。
+- `subject` と本文は日本語で記載する。
 - 詳細は `/.gitmessage` と `git-commit` スキルに従う。

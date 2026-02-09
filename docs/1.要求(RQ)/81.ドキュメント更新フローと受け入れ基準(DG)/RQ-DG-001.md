@@ -3,7 +3,7 @@ id: RQ-DG-001
 title: ドキュメント更新フローと受け入れ基準
 doc_type: ドキュメントガバナンス
 phase: RQ
-version: 1.0.9
+version: 1.0.10
 status: 承認
 owner: アーキテクト
 created: 2026-01-31
@@ -79,6 +79,7 @@ flowchart TD
 
 ## コミットメッセージ規約
 - 変更をコミットする場合は Conventional Commits（`type(scope)!: subject`）を使用する。
+- `subject` と本文は日本語で記載する。
 - 実運用は `/.gitmessage` と `git-commit` スキルに従う。
 
 ## skillsメンテタイミング
@@ -98,3 +99,4 @@ flowchart TD
 - 2026-02-09: ownerをSH定義ロール限定へ更新
 - 2026-02-09: SemVer / RFC2119 / Conventional Commits の運用ルールを追記
 - 2026-02-09: Conventional Commits の制約文書（RQ-PC-009）を関連付け
+- 2026-02-09: コミットメッセージ本文言語を日本語へ明記

@@ -23,6 +23,7 @@ metadata:
    - `/.gitmessage` の見出しに沿って、件名・背景/目的・変更内容・影響範囲を埋める
    - 件名は `type(scope)!: subject` 形式で作成する（Conventional Commits）
    - `type` は `feat` / `fix` / `docs` / `refactor` / `test` / `chore` を使用する
+   - `subject` と本文は日本語で記載する
 
 3. **ステージングとコミット**
    - 必要ファイルを `git add` する

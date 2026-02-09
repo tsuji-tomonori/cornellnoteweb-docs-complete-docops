@@ -3,7 +3,7 @@ id: RQ-PC-009
 title: コミットメッセージはConventional Commits準拠
 doc_type: プロジェクトの制約
 phase: RQ
-version: 1.0.0
+version: 1.0.1
 status: 承認
 owner: 開発リード
 created: 2026-02-09
@@ -23,6 +23,7 @@ tags:
 ## 制約内容
 - コミットメッセージは Conventional Commits（`type(scope)!: subject`）に従う。
 - `type` は `feat` / `fix` / `docs` / `refactor` / `test` / `chore` を標準とする。
+- `subject` と本文は日本語で記載する。
 - 詳細フォーマットは `/.gitmessage` と `git-commit` スキルで統一管理する。
 
 ## 根拠
@@ -34,3 +35,4 @@ tags:
 
 ## 変更履歴
 - 2026-02-09: 初版
+- 2026-02-09: コミットメッセージ本文言語を日本語へ明記

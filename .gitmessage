@@ -2,6 +2,7 @@
 # 形式: type(scope)!: subject
 # 例: docs(rq): SnowCard優先度をRFC2119に統一
 # type: feat|fix|docs|refactor|test|chore
+# subject/本文は日本語で記載
 
 #
 # 背景/目的（なぜ）

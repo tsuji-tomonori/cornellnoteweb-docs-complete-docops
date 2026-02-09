@@ -3,7 +3,7 @@ id: BD-CM-001
 title: 構成管理方針（Git/Secrets/Docs）
 doc_type: 構成管理
 phase: BD
-version: 1.0.7
+version: 1.0.8
 status: 承認
 owner: 開発リード
 created: 2026-01-31
@@ -47,6 +47,7 @@ tags:
 - Frontmatter主要項目（doc_type/phase/version/status/owner）の値運用ルールは、要求/設計資料と共通スキルに反映する。
 - owner値は `RQ-SH-*` に定義された責務ロールのみを許可し、未定義ロールは先にSHへ追加する。
 - コミットメッセージは Conventional Commits（`type(scope)!: subject`）へ統一し、`/.gitmessage` を利用する。
+- コミットメッセージの `subject` と本文は日本語で記載する。
 
 ## 変更履歴
 - 2026-01-31: 初版
@@ -57,3 +58,4 @@ tags:
 - 2026-02-09: Frontmatter主要項目の値運用ルール反映を追加
 - 2026-02-09: ownerのSHロール限定ルールを追加
 - 2026-02-09: Conventional Commits運用ルールを追加
+- 2026-02-09: コミットメッセージ本文言語を日本語へ明記
