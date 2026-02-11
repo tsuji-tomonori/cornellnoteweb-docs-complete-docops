@@ -1,0 +1,133 @@
+plugins {
+  id 'java'
+  id 'jacoco'
+  id 'pmd'
+  id 'com.github.spotbugs' version '6.0.24'
+  id 'info.solidsoft.pitest' version '1.15.0'
+  id 'com.diffplug.spotless' version '6.25.0'
+  id 'org.springframework.boot' version '3.2.2'
+  id 'io.spring.dependency-management' version '1.1.4'
+}
+
+group = 'com.example'
+version = '0.1.0'
+
+java {
+  toolchain {
+    languageVersion = JavaLanguageVersion.of(21)
+  }
+}
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  implementation 'org.springframework.boot:spring-boot-starter-web'
+  implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+  implementation 'org.springframework.boot:spring-boot-starter-validation'
+  implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+  implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+  implementation 'org.postgresql:postgresql:42.7.2'
+  implementation 'software.amazon.awssdk:secretsmanager:2.25.27'
+  implementation 'com.fasterxml.jackson.core:jackson-databind'
+
+  testImplementation 'org.springframework.boot:spring-boot-starter-test'
+  testImplementation 'com.github.database-rider:rider-spring:1.43.0'
+  testImplementation 'com.github.database-rider:rider-core:1.43.0'
+  testImplementation 'org.dbunit:dbunit:2.7.3'
+  testImplementation 'org.skyscreamer:jsonassert:1.5.3'
+  testImplementation 'com.h2database:h2:2.2.224'
+}
+
+tasks.named('test') {
+  useJUnitPlatform()
+  finalizedBy tasks.named('jacocoTestReport')
+}
+
+tasks.named('jacocoTestReport') {
+  reports {
+    xml.required = true
+    html.required = true
+  }
+}
+
+tasks.named('jacocoTestCoverageVerification') {
+  violationRules {
+    rule {
+      enabled = true
+      element = 'PACKAGE'
+      includes = ['com.example.cornellnote.api.controller']
+      limit {
+        counter = 'LINE'
+        value = 'COVEREDRATIO'
+        minimum = 0.95
+      }
+    }
+    rule {
+      enabled = true
+      element = 'PACKAGE'
+      includes = ['com.example.cornellnote.api.service']
+      limit {
+        counter = 'LINE'
+        value = 'COVEREDRATIO'
+        minimum = 0.95
+      }
+    }
+  }
+}
+
+pmd {
+  toolVersion = '7.0.0'
+  ruleSets = []
+  ruleSetFiles = files('config/pmd/pmd.xml')
+}
+
+tasks.withType(Pmd) {
+  consoleOutput = true
+  ignoreFailures = false
+  reports {
+    xml.required = true
+    html.required = true
+  }
+}
+
+spotbugs {
+  toolVersion = '4.8.6'
+  effort = 'max'
+  reportLevel = 'low'
+}
+
+tasks.withType(com.github.spotbugs.snom.SpotBugsTask) {
+  excludeFilter = file("config/spotbugs/exclude.xml")
+}
+
+tasks.withType(com.github.spotbugs.snom.SpotBugsTask) {
+  reports {
+    xml.required = true
+    html.required = true
+  }
+}
+
+spotless {
+  java {
+    googleJavaFormat('1.22.0')
+    target 'src/main/java/**/*.java', 'src/test/java/**/*.java'
+  }
+}
+
+pitest {
+  pitestVersion = '1.15.0'
+  junit5PluginVersion = '1.2.1'
+  targetClasses = ['com.example.cornellnote.api.service.*']
+  targetTests = ['com.example.cornellnote.*']
+  threads = Runtime.runtime.availableProcessors()
+  outputFormats = ['HTML', 'XML']
+  timestampedReports = false
+}
+
+tasks.named('check') {
+  dependsOn tasks.named('jacocoTestCoverageVerification')
+  dependsOn tasks.named('spotlessCheck')
+  dependsOn tasks.named('pitest')
+}

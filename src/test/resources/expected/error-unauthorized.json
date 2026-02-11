@@ -1,0 +1,5 @@
+{
+  "code": "UNAUTHORIZED",
+  "message": "未認証です",
+  "traceId": "${json-unit.ignore}"
+}

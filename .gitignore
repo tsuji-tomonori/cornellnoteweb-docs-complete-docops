@@ -145,3 +145,12 @@ dist
 
 quartz/*
 infra/cdk.out/
+
+# AI workspace
+.workspace/
+
+# Local build/test artifacts
+.gradle/
+build/
+playwright-report/
+test-results/
