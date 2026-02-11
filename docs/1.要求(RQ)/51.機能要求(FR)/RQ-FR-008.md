@@ -3,13 +3,14 @@ id: RQ-FR-008
 title: ノート内容（Cue/Notes/Summary）を取得できる
 doc_type: 機能要求
 phase: RQ
-version: 1.0.0
+version: 1.0.1
 status: 承認
 owner: プロダクトオーナー
 created: 2026-01-31
-updated: 2026-02-09
+updated: 2026-02-11
 up:
 - '[[RQ-SC-001]]'
+- '[[RQ-RDR-013]]'
 related:
 - '[[DD-API-003]]'
 tags:
@@ -21,7 +22,7 @@ tags:
 ## SnowCard（日本語）
 - **要求ID**: RQ-FR-008
 - **種別**: 機能要求
-- **優先度**: SHOULD
+- **優先度**: MUST
 - **要求**: 本システムは、/api/notes/{noteId}/content で本文3領域だけ取得できる。
 - **根拠**: エクスポートや共有などで軽量に取りたい場合。
 - **受入基準**:
@@ -38,3 +39,4 @@ tags:
 
 ## 変更履歴
 - 2026-01-31: 初版
+- 2026-02-11: .workspace基準に合わせて優先度をMUSTへ更新

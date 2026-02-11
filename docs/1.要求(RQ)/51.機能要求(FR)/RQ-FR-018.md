@@ -3,13 +3,14 @@ id: RQ-FR-018
 title: エクスポート状態を取得しダウンロードできる
 doc_type: 機能要求
 phase: RQ
-version: 1.0.0
+version: 1.0.1
 status: 承認
 owner: プロダクトオーナー
 created: 2026-01-31
-updated: 2026-02-09
+updated: 2026-02-11
 up:
 - '[[RQ-SC-001]]'
+- '[[RQ-RDR-013]]'
 related:
 - '[[RQ-UC-006]]'
 - '[[DD-API-008]]'
@@ -22,7 +23,7 @@ tags:
 ## SnowCard（日本語）
 - **要求ID**: RQ-FR-018
 - **種別**: 機能要求
-- **優先度**: MAY
+- **優先度**: SHOULD
 - **要求**: 本システムは、/api/exports/{exportId} GET で状態とダウンロードURLを取得できる。
 - **根拠**: 非同期出力の完了確認。
 - **受入基準**:
@@ -40,3 +41,4 @@ tags:
 
 ## 変更履歴
 - 2026-01-31: 初版
+- 2026-02-11: .workspace基準に合わせて優先度をSHOULDへ更新
