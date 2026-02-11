@@ -66,8 +66,10 @@ tasks:
 
   docs:deploy:
     desc: ドキュメントのデプロイを一括実行（Quartz build + CDK deploy）
-    deps:
-      - infra:deploy
+    env:
+      AWS_REGION: ap-northeast-1
+    cmds:
+      - task infra:deploy
 
   openapi:build:
     desc: Build OpenAPI HTML with Redocly

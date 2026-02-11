@@ -3,17 +3,18 @@ id: AT-REL-001
 title: ドキュメントデプロイ手順書（リリース手順）
 doc_type: 配信手順書
 phase: AT
-version: 1.0.2
+version: 1.0.3
 status: 下書き
-owner: 運用担当（SRE/運用）
+owner: RQ-SH-003
 created: 2026-01-31
-updated: 2026-02-09
+updated: 2026-02-11
 up:
 - '[[BD-DEP-001]]'
 - '[[DD-REV-001]]'
 related:
 - '[[DD-DEP-001]]'
 - '[[BD-ADR-007]]'
+- '[[BD-DEP-003]]'
 tags:
 - CornellNoteWeb
 - AT
@@ -49,3 +50,4 @@ tags:
 - 2026-01-31: 初版
 - 2026-02-09: Taskfile前提の配信手順を追記
 - 2026-02-09: ドキュメントのデプロイ手順として表現を統一
+- 2026-02-11: ownerをSHロールIDへ正規化し、公開フロー設計文書 [[BD-DEP-003]] を関連追加

@@ -3,11 +3,11 @@ id: BD-DEP-001
 title: デプロイ方式（ローカル/クラウド）
 doc_type: デプロイ
 phase: BD
-version: 1.0.3
+version: 1.0.4
 status: 承認
 owner: RQ-SH-003
 created: 2026-01-31
-updated: 2026-02-09
+updated: 2026-02-11
 up:
 - '[[RQ-PC-003]]'
 - '[[BD-ARCH-003]]'
@@ -15,6 +15,7 @@ related:
 - '[[BD-ARCH-003]]'
 - '[[BD-ADR-007]]'
 - '[[BD-ADR-008]]'
+- '[[BD-DEP-003]]'
 tags:
 - CornellNoteWeb
 - BD
@@ -55,3 +56,4 @@ tags:
 - 2026-02-09: Quartz public生成とCDK deploy連携手順を追加
 - 2026-02-09: ドキュメントのデプロイ表現へ統一
 - 2026-02-09: CloudFront + Function URL(OAC) のインフラ構成とPOST要件を追記
+- 2026-02-11: 公開フロー詳細を [[BD-DEP-003]] へ分離し、関連リンクを追加
