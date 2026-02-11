@@ -1,6 +1,6 @@
 # Codex × Obsidian ドキュメント運用 SkillPack
 
-このリポジトリは **Obsidian Vault（Markdown）を Codex で自動更新**するための、`AGENTS.md` と **Agent Skills**、および補助スクリプト群です。
+このリポジトリは **Obsidian Vault（Markdown）を OpenCode/Codex で自動更新**するための、`AGENTS.md` と **Agent Skills**、および補助スクリプト群です。
 
 ## できること
 - 自然言語の指示から、既存ドキュメントを規約どおりに更新（Frontmatter・リンク・変更履歴を維持）
@@ -19,7 +19,7 @@
 ## セットアップ（あなたのObsidian Vaultに適用）
 1. あなたの Obsidian Vault（またはドキュメントリポジトリ）のルートに、以下をコピーします。
    - `AGENTS.md`
-   - `.codex/`
+   - `.opencode/`
    - （任意）`tools/`（ラッパースクリプト）
 2. Vault ルートで `codex` を起動（インタラクティブ）するか、`codex exec` を使います。
 
@@ -57,7 +57,7 @@ codex exec --full-auto "$docops-orchestrator\nRQ-FR-001 の受入基準を追記
 ```
 
 ## ディレクトリ
-- `.codex/skills/` : Codex Agent Skills
+- `.opencode/skills/` : OpenCode Agent Skills
 - `tools/` : `codex exec` ラッパー、補助ツール
 - `examples/` : 指示文（自然言語）サンプル
 

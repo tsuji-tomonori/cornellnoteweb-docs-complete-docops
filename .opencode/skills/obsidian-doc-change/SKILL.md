@@ -1,0 +1,62 @@
+---
+name: obsidian-doc-change
+description: 自然言語の変更依頼からObsidian Markdownを最小差分で更新する。使う場面: 既存ID文書の追記、受入基準修正、Frontmatter/リンク整備の依頼時。
+metadata:
+  short-description: 自然言語の変更依頼から、ObsidianのMarkdownドキュメントを規約どおりに更新する
+---
+
+## 目的
+自然言語で与えられた変更依頼を、Obsidian Vault内のMarkdownドキュメントに **最小差分**で反映します。
+
+## When to use me
+- 既存ID（例: `RQ-FR-001`）の本文/Frontmatterを更新したい
+- 変更履歴追加、`up/related` 更新、SnowCard修正が必要
+- 影響確認のため最後に `obsidian-doc-check` を回したい
+
+## When NOT to use me
+- 新規ドキュメント作成が主目的（`obsidian-doc-new` を使う）
+- リポジトリ全体の改修オーケストレーションが必要（`docops-orchestrator` を使う）
+- ドキュメント外のコード実装変更のみが目的
+
+## 入力の想定
+- ユーザーの指示文（例: 「RQ-FR-001 の受入基準を追記して」）
+- 可能なら、対象ID（例: `RQ-FR-001`）や対象フォルダ（例: `docs/1.要求(RQ)/51.機能要求(FR)`）が含まれる
+
+## Workflow
+1. **対象ドキュメントを特定**
+   - 指定IDがあれば `docs/` 配下からファイル名一致で探す
+   - IDが無い場合はタイトル/キーワードで検索して候補を絞る（`rg` / `find` を使う）
+   - 候補が複数なら、最も一致するものを選び、前提（なぜそれを選んだか）を最終メッセージに明記
+
+2. **変更を反映**
+   - ドキュメントの構造（見出し、節）をできるだけ維持し、必要箇所のみ更新
+    - Frontmatter:
+      - `updated` を当日の日付に更新
+      - 内容変更なら `version` を patch up（Semantic Versioning、`1.0.0 -> 1.0.1`）
+      - `doc_type`: 同種別で表記ゆれを作らない
+      - `phase`: `RQ/BD/DD/UT/IT/AT` かつID prefixと一致
+      - `status`: `下書き` / `承認` / `廃止` の運用ルールに従う
+      - `owner`: `RQ-SH-*` で定義された責務ロールで管理する
+    - 末尾の `## 変更履歴` に追記（当日 + 要約）
+
+3. **決定記録ゲート（必須）**
+    - 要求（RQ-*）を新規追加/意味変更する場合は、同一PRで RDR（`RQ-RDR-*`）を新規または更新する
+    - 設計（BD-*/DD-*）を新規追加/意味変更する場合は、同一PRで ADR（`BD-ADR-*`）を新規または更新する
+    - 要求起点の設計変更は `RDR -> ADR -> 設計本文` で辿れるリンクを張る
+
+4. **リンクを整備（必要最小限）**
+    - 変更により参照関係が増減したら `up/related` を更新
+    - `related` は必要に応じて相互化する（`A.related` に `B` を追加したら `B.related` に `A` を追加）
+    - 新規ドキュメントが必要なら `$obsidian-doc-new` を使用して作成する
+
+5. **要求記述の整合（SnowCard）**
+   - 要求系ドキュメントでは、優先度を RFC 2119（`MUST` / `SHOULD` / `MAY`）で記載する
+
+6. **整合チェック**
+   - 変更後に `$obsidian-doc-check` を実行し、`reports/` にレポートを保存する
+   - 重大な不整合が出たら、可能な範囲で修正して再実行する
+
+## Output contract
+- 変更されたMarkdownファイル（必要最小限）
+- `reports/` にチェックレポート（推奨）
+- 最終メッセージでは「変更点」「前提」「次に必要な作業（TBD含む）」を簡潔にまとめる

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "permission": {
+    "*": "allow",
+    "skill": {
+      "*": "ask",
+      "docops-orchestrator": "allow",
+      "obsidian-doc-change": "allow",
+      "obsidian-doc-new": "allow",
+      "obsidian-doc-check": "allow",
+      "skill-maintainer": "allow"
+    }
+  }
+}
