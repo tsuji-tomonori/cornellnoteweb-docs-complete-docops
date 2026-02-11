@@ -3,7 +3,7 @@ id: RQ-DATA-001
 title: データ整合性（制約と検証）
 doc_type: 非機能要求
 phase: RQ
-version: 1.0.1
+version: 1.0.2
 status: 承認
 owner: RQ-SH-002
 created: 2026-01-31
@@ -11,8 +11,17 @@ updated: 2026-02-11
 up:
 - '[[RQ-SC-001]]'
 - '[[RQ-RDR-010]]'
+- '[[RQ-RDR-012]]'
 related:
 - '[[RQ-PS-007]]'
+- '[[RQ-DATA-006]]'
+- '[[RQ-DATA-007]]'
+- '[[RQ-DATA-008]]'
+- '[[RQ-DATA-009]]'
+- '[[RQ-DATA-010]]'
+- '[[RQ-DATA-011]]'
+- '[[RQ-DATA-012]]'
+- '[[RQ-DATA-013]]'
 tags:
 - CornellNoteWeb
 - RQ
@@ -38,3 +47,4 @@ tags:
 ## 変更履歴
 - 2026-01-31: 初版
 - 2026-02-11: NFR_all.txt をもとにSnowCard形式へ再定義
+- 2026-02-11: DB非機能要件群（RQ-DATA-006〜013）への統括リンクを追加
