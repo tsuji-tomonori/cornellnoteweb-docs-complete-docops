@@ -3,16 +3,18 @@ id: BD-API-001
 title: API概要（エンドポイント一覧）
 doc_type: API（概要設計）
 phase: BD
-version: 1.0.0
+version: 1.0.2
 status: 承認
 owner: アーキテクト
 created: 2026-01-31
-updated: 2026-02-09
+updated: 2026-02-11
 up:
 - '[[RQ-FR-001]]'
 - '[[BD-ARCH-001]]'
 related:
 - '[[BD-ARCH-002]]'
+- '[[BD-ARCH-003]]'
+- '[[BD-ADR-010]]'
 tags:
 - CornellNoteWeb
 - BD
@@ -24,6 +26,9 @@ tags:
 - 形式: JSON
 - 認証: サーバサイドセッション（MVP）。将来CSRF対策と合わせて強化（[[BD-ADR-004]]）。
 - エラー: 統一フォーマット（[[BD-API-003]]）
+- 配信経路: `app.<domain>` の CloudFront で `/api/*` を API Gateway オリジンへルーティングする。
+- API Gateway は `AppSiteStack` で自動生成する。
+- `/api/*` は Function URL オリジンを経由しないため、`x-amz-content-sha256` 要件の影響を受けない。
 
 ## エンドポイント一覧（MVP）
 ### 認証
@@ -61,3 +66,5 @@ tags:
 
 ## 変更履歴
 - 2026-01-31: 初版
+- 2026-02-11: CloudFront(app) の `/api/*` behavior と API Gateway ルーティング方針を追記
+- 2026-02-11: API Gateway を手動指定ではなく `AppSiteStack` 自動生成へ更新

@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`cdk-nag captures AwsSolutions findings for both stacks 1`] = `
+{
+  "AppSiteStack": {
+    "errors": [],
+    "warnings": [],
+  },
+  "QuartzSiteStack": {
+    "errors": [],
+    "warnings": [],
+  },
+}
+`;

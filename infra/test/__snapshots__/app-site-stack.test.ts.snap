@@ -1,0 +1,810 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`AppSiteStack matches snapshot 1`] = `
+{
+  "Outputs": {
+    "ApiGatewayUrl": {
+      "Value": {
+        "Fn::Join": [
+          "",
+          [
+            "https://",
+            {
+              "Ref": "SpringApi5030ECC3",
+            },
+            ".execute-api.ap-northeast-1.",
+            {
+              "Ref": "AWS::URLSuffix",
+            },
+            "/",
+            {
+              "Ref": "SpringApiDeploymentStageprod39CEDAB6",
+            },
+            "/",
+          ],
+        ],
+      },
+    },
+    "AppCloudFrontDomainName": {
+      "Value": {
+        "Fn::GetAtt": [
+          "AppDistributionFE05A23E",
+          "DomainName",
+        ],
+      },
+    },
+    "AppFunctionUrl": {
+      "Value": {
+        "Fn::GetAtt": [
+          "SpringSsrFnFunctionUrl84615A1C",
+          "FunctionUrl",
+        ],
+      },
+    },
+    "SpringApiEndpoint3CADEAB7": {
+      "Value": {
+        "Fn::Join": [
+          "",
+          [
+            "https://",
+            {
+              "Ref": "SpringApi5030ECC3",
+            },
+            ".execute-api.ap-northeast-1.",
+            {
+              "Ref": "AWS::URLSuffix",
+            },
+            "/",
+            {
+              "Ref": "SpringApiDeploymentStageprod39CEDAB6",
+            },
+            "/",
+          ],
+        ],
+      },
+    },
+  },
+  "Parameters": {
+    "BootstrapVersion": {
+      "Default": "/cdk-bootstrap/hnb659fds/version",
+      "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]",
+      "Type": "AWS::SSM::Parameter::Value<String>",
+    },
+  },
+  "Resources": {
+    "AppDistributionFE05A23E": {
+      "Properties": {
+        "DistributionConfig": {
+          "CacheBehaviors": [
+            {
+              "AllowedMethods": [
+                "GET",
+                "HEAD",
+                "OPTIONS",
+                "PUT",
+                "PATCH",
+                "POST",
+                "DELETE",
+              ],
+              "CachePolicyId": "4135ea2d-6df8-44a3-9df3-4b5a84be39ad",
+              "Compress": true,
+              "OriginRequestPolicyId": "b689b0a8-53d0-40ab-baf2-68738e2966ac",
+              "PathPattern": "/api/*",
+              "ResponseHeadersPolicyId": "67f7725c-6f97-4210-82d7-5512b31e9d03",
+              "TargetOriginId": "AppSiteStackAppDistributionOrigin27A5A7F3C",
+              "ViewerProtocolPolicy": "redirect-to-https",
+            },
+          ],
+          "DefaultCacheBehavior": {
+            "AllowedMethods": [
+              "GET",
+              "HEAD",
+              "OPTIONS",
+              "PUT",
+              "PATCH",
+              "POST",
+              "DELETE",
+            ],
+            "CachePolicyId": "4135ea2d-6df8-44a3-9df3-4b5a84be39ad",
+            "Compress": true,
+            "OriginRequestPolicyId": "b689b0a8-53d0-40ab-baf2-68738e2966ac",
+            "ResponseHeadersPolicyId": "67f7725c-6f97-4210-82d7-5512b31e9d03",
+            "TargetOriginId": "AppSiteStackAppDistributionOrigin152F29BBB",
+            "ViewerProtocolPolicy": "redirect-to-https",
+          },
+          "Enabled": true,
+          "HttpVersion": "http2",
+          "IPV6Enabled": true,
+          "Origins": [
+            {
+              "CustomOriginConfig": {
+                "OriginProtocolPolicy": "https-only",
+                "OriginSSLProtocols": [
+                  "TLSv1.2",
+                ],
+              },
+              "DomainName": {
+                "Fn::Select": [
+                  2,
+                  {
+                    "Fn::Split": [
+                      "/",
+                      {
+                        "Fn::GetAtt": [
+                          "SpringSsrFnFunctionUrl84615A1C",
+                          "FunctionUrl",
+                        ],
+                      },
+                    ],
+                  },
+                ],
+              },
+              "Id": "AppSiteStackAppDistributionOrigin152F29BBB",
+              "OriginAccessControlId": {
+                "Fn::GetAtt": [
+                  "AppDistributionOrigin1FunctionUrlOriginAccessControl4E3273EC",
+                  "Id",
+                ],
+              },
+            },
+            {
+              "CustomOriginConfig": {
+                "OriginProtocolPolicy": "https-only",
+                "OriginSSLProtocols": [
+                  "TLSv1.2",
+                ],
+              },
+              "DomainName": {
+                "Fn::Select": [
+                  2,
+                  {
+                    "Fn::Split": [
+                      "/",
+                      {
+                        "Fn::Join": [
+                          "",
+                          [
+                            "https://",
+                            {
+                              "Ref": "SpringApi5030ECC3",
+                            },
+                            ".execute-api.ap-northeast-1.",
+                            {
+                              "Ref": "AWS::URLSuffix",
+                            },
+                            "/",
+                            {
+                              "Ref": "SpringApiDeploymentStageprod39CEDAB6",
+                            },
+                            "/",
+                          ],
+                        ],
+                      },
+                    ],
+                  },
+                ],
+              },
+              "Id": "AppSiteStackAppDistributionOrigin27A5A7F3C",
+              "OriginPath": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "/",
+                    {
+                      "Fn::Select": [
+                        3,
+                        {
+                          "Fn::Split": [
+                            "/",
+                            {
+                              "Fn::Join": [
+                                "",
+                                [
+                                  "https://",
+                                  {
+                                    "Ref": "SpringApi5030ECC3",
+                                  },
+                                  ".execute-api.ap-northeast-1.",
+                                  {
+                                    "Ref": "AWS::URLSuffix",
+                                  },
+                                  "/",
+                                  {
+                                    "Ref": "SpringApiDeploymentStageprod39CEDAB6",
+                                  },
+                                  "/",
+                                ],
+                              ],
+                            },
+                          ],
+                        },
+                      ],
+                    },
+                  ],
+                ],
+              },
+            },
+          ],
+        },
+        "Tags": [
+          {
+            "Key": "CostCenter",
+            "Value": "CC1234",
+          },
+          {
+            "Key": "Environment",
+            "Value": "Development",
+          },
+          {
+            "Key": "ManagedBy",
+            "Value": "CDK",
+          },
+          {
+            "Key": "Owner",
+            "Value": "PlatformTeam",
+          },
+          {
+            "Key": "Project",
+            "Value": "cornellnoteweb",
+          },
+        ],
+      },
+      "Type": "AWS::CloudFront::Distribution",
+    },
+    "AppDistributionOrigin1FunctionUrlOriginAccessControl4E3273EC": {
+      "Properties": {
+        "OriginAccessControlConfig": {
+          "Name": "AppSiteStackAppDistributionOnctionUrlOriginAccessControl2BF32AF1",
+          "OriginAccessControlOriginType": "lambda",
+          "SigningBehavior": "always",
+          "SigningProtocol": "sigv4",
+        },
+      },
+      "Type": "AWS::CloudFront::OriginAccessControl",
+    },
+    "AppDistributionOrigin1InvokeFromApiForAppSiteStackAppDistributionOrigin152F29BBB7DB497A2": {
+      "Properties": {
+        "Action": "lambda:InvokeFunctionUrl",
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "SpringSsrFnFunctionUrl84615A1C",
+            "FunctionArn",
+          ],
+        },
+        "Principal": "cloudfront.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition",
+              },
+              ":cloudfront::",
+              {
+                "Ref": "AWS::AccountId",
+              },
+              ":distribution/",
+              {
+                "Ref": "AppDistributionFE05A23E",
+              },
+            ],
+          ],
+        },
+      },
+      "Type": "AWS::Lambda::Permission",
+    },
+    "SpringApi5030ECC3": {
+      "Properties": {
+        "Name": "SpringApi",
+        "Tags": [
+          {
+            "Key": "CostCenter",
+            "Value": "CC1234",
+          },
+          {
+            "Key": "Environment",
+            "Value": "Development",
+          },
+          {
+            "Key": "ManagedBy",
+            "Value": "CDK",
+          },
+          {
+            "Key": "Owner",
+            "Value": "PlatformTeam",
+          },
+          {
+            "Key": "Project",
+            "Value": "cornellnoteweb",
+          },
+        ],
+      },
+      "Type": "AWS::ApiGateway::RestApi",
+    },
+    "SpringApiANYApiPermissionAppSiteStackSpringApi9A0089D9ANY5416E2DE": {
+      "Properties": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "SpringSsrFn27E49DAD",
+            "Arn",
+          ],
+        },
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition",
+              },
+              ":execute-api:ap-northeast-1:111111111111:",
+              {
+                "Ref": "SpringApi5030ECC3",
+              },
+              "/",
+              {
+                "Ref": "SpringApiDeploymentStageprod39CEDAB6",
+              },
+              "/*/",
+            ],
+          ],
+        },
+      },
+      "Type": "AWS::Lambda::Permission",
+    },
+    "SpringApiANYApiPermissionTestAppSiteStackSpringApi9A0089D9ANYFBC151EE": {
+      "Properties": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "SpringSsrFn27E49DAD",
+            "Arn",
+          ],
+        },
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition",
+              },
+              ":execute-api:ap-northeast-1:111111111111:",
+              {
+                "Ref": "SpringApi5030ECC3",
+              },
+              "/test-invoke-stage/*/",
+            ],
+          ],
+        },
+      },
+      "Type": "AWS::Lambda::Permission",
+    },
+    "SpringApiANYBD5E76D9": {
+      "Properties": {
+        "AuthorizationType": "NONE",
+        "HttpMethod": "ANY",
+        "Integration": {
+          "IntegrationHttpMethod": "POST",
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition",
+                },
+                ":apigateway:ap-northeast-1:lambda:path/2015-03-31/functions/",
+                {
+                  "Fn::GetAtt": [
+                    "SpringSsrFn27E49DAD",
+                    "Arn",
+                  ],
+                },
+                "/invocations",
+              ],
+            ],
+          },
+        },
+        "ResourceId": {
+          "Fn::GetAtt": [
+            "SpringApi5030ECC3",
+            "RootResourceId",
+          ],
+        },
+        "RestApiId": {
+          "Ref": "SpringApi5030ECC3",
+        },
+      },
+      "Type": "AWS::ApiGateway::Method",
+    },
+    "SpringApiAccountDF4B76AF": {
+      "DeletionPolicy": "Retain",
+      "DependsOn": [
+        "SpringApi5030ECC3",
+      ],
+      "Properties": {
+        "CloudWatchRoleArn": {
+          "Fn::GetAtt": [
+            "SpringApiCloudWatchRoleEFABBD83",
+            "Arn",
+          ],
+        },
+      },
+      "Type": "AWS::ApiGateway::Account",
+      "UpdateReplacePolicy": "Retain",
+    },
+    "SpringApiCloudWatchRoleEFABBD83": {
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "apigateway.amazonaws.com",
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition",
+                },
+                ":iam::aws:policy/service-role/AmazonAPIGatewayPushToCloudWatchLogs",
+              ],
+            ],
+          },
+        ],
+        "Tags": [
+          {
+            "Key": "CostCenter",
+            "Value": "CC1234",
+          },
+          {
+            "Key": "Environment",
+            "Value": "Development",
+          },
+          {
+            "Key": "ManagedBy",
+            "Value": "CDK",
+          },
+          {
+            "Key": "Owner",
+            "Value": "PlatformTeam",
+          },
+          {
+            "Key": "Project",
+            "Value": "cornellnoteweb",
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Role",
+      "UpdateReplacePolicy": "Retain",
+    },
+    "SpringApiDeploymentB6B6871Ac22286062e53b006e3cd1b3e622897c1": {
+      "DependsOn": [
+        "SpringApiproxyANYCA8BD430",
+        "SpringApiproxyD63FCC99",
+        "SpringApiANYBD5E76D9",
+      ],
+      "Metadata": {
+        "aws:cdk:do-not-refactor": true,
+      },
+      "Properties": {
+        "Description": "Automatically created by the RestApi construct",
+        "RestApiId": {
+          "Ref": "SpringApi5030ECC3",
+        },
+      },
+      "Type": "AWS::ApiGateway::Deployment",
+    },
+    "SpringApiDeploymentStageprod39CEDAB6": {
+      "DependsOn": [
+        "SpringApiAccountDF4B76AF",
+      ],
+      "Properties": {
+        "DeploymentId": {
+          "Ref": "SpringApiDeploymentB6B6871Ac22286062e53b006e3cd1b3e622897c1",
+        },
+        "RestApiId": {
+          "Ref": "SpringApi5030ECC3",
+        },
+        "StageName": "prod",
+        "Tags": [
+          {
+            "Key": "CostCenter",
+            "Value": "CC1234",
+          },
+          {
+            "Key": "Environment",
+            "Value": "Development",
+          },
+          {
+            "Key": "ManagedBy",
+            "Value": "CDK",
+          },
+          {
+            "Key": "Owner",
+            "Value": "PlatformTeam",
+          },
+          {
+            "Key": "Project",
+            "Value": "cornellnoteweb",
+          },
+        ],
+      },
+      "Type": "AWS::ApiGateway::Stage",
+    },
+    "SpringApiproxyANYApiPermissionAppSiteStackSpringApi9A0089D9ANYproxy76793DD7": {
+      "Properties": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "SpringSsrFn27E49DAD",
+            "Arn",
+          ],
+        },
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition",
+              },
+              ":execute-api:ap-northeast-1:111111111111:",
+              {
+                "Ref": "SpringApi5030ECC3",
+              },
+              "/",
+              {
+                "Ref": "SpringApiDeploymentStageprod39CEDAB6",
+              },
+              "/*/*",
+            ],
+          ],
+        },
+      },
+      "Type": "AWS::Lambda::Permission",
+    },
+    "SpringApiproxyANYApiPermissionTestAppSiteStackSpringApi9A0089D9ANYproxyC87D30A5": {
+      "Properties": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "SpringSsrFn27E49DAD",
+            "Arn",
+          ],
+        },
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition",
+              },
+              ":execute-api:ap-northeast-1:111111111111:",
+              {
+                "Ref": "SpringApi5030ECC3",
+              },
+              "/test-invoke-stage/*/*",
+            ],
+          ],
+        },
+      },
+      "Type": "AWS::Lambda::Permission",
+    },
+    "SpringApiproxyANYCA8BD430": {
+      "Properties": {
+        "AuthorizationType": "NONE",
+        "HttpMethod": "ANY",
+        "Integration": {
+          "IntegrationHttpMethod": "POST",
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition",
+                },
+                ":apigateway:ap-northeast-1:lambda:path/2015-03-31/functions/",
+                {
+                  "Fn::GetAtt": [
+                    "SpringSsrFn27E49DAD",
+                    "Arn",
+                  ],
+                },
+                "/invocations",
+              ],
+            ],
+          },
+        },
+        "ResourceId": {
+          "Ref": "SpringApiproxyD63FCC99",
+        },
+        "RestApiId": {
+          "Ref": "SpringApi5030ECC3",
+        },
+      },
+      "Type": "AWS::ApiGateway::Method",
+    },
+    "SpringApiproxyD63FCC99": {
+      "Properties": {
+        "ParentId": {
+          "Fn::GetAtt": [
+            "SpringApi5030ECC3",
+            "RootResourceId",
+          ],
+        },
+        "PathPart": "{proxy+}",
+        "RestApiId": {
+          "Ref": "SpringApi5030ECC3",
+        },
+      },
+      "Type": "AWS::ApiGateway::Resource",
+    },
+    "SpringSsrFn27E49DAD": {
+      "DependsOn": [
+        "SpringSsrFnServiceRoleBBFB53EE",
+      ],
+      "Properties": {
+        "Architectures": [
+          "arm64",
+        ],
+        "Code": {
+          "ImageUri": {
+            "Fn::Sub": "<CONTAINER_IMAGE_URI>",
+          },
+        },
+        "Environment": {
+          "Variables": {
+            "AWS_LWA_PORT": "3000",
+          },
+        },
+        "MemorySize": 2048,
+        "PackageType": "Image",
+        "Role": {
+          "Fn::GetAtt": [
+            "SpringSsrFnServiceRoleBBFB53EE",
+            "Arn",
+          ],
+        },
+        "Tags": [
+          {
+            "Key": "CostCenter",
+            "Value": "CC1234",
+          },
+          {
+            "Key": "Environment",
+            "Value": "Development",
+          },
+          {
+            "Key": "ManagedBy",
+            "Value": "CDK",
+          },
+          {
+            "Key": "Owner",
+            "Value": "PlatformTeam",
+          },
+          {
+            "Key": "Project",
+            "Value": "cornellnoteweb",
+          },
+        ],
+        "Timeout": 30,
+      },
+      "Type": "AWS::Lambda::Function",
+    },
+    "SpringSsrFnFunctionUrl84615A1C": {
+      "Properties": {
+        "AuthType": "AWS_IAM",
+        "TargetFunctionArn": {
+          "Fn::GetAtt": [
+            "SpringSsrFn27E49DAD",
+            "Arn",
+          ],
+        },
+      },
+      "Type": "AWS::Lambda::Url",
+    },
+    "SpringSsrFnServiceRoleBBFB53EE": {
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com",
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition",
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+              ],
+            ],
+          },
+        ],
+        "Tags": [
+          {
+            "Key": "CostCenter",
+            "Value": "CC1234",
+          },
+          {
+            "Key": "Environment",
+            "Value": "Development",
+          },
+          {
+            "Key": "ManagedBy",
+            "Value": "CDK",
+          },
+          {
+            "Key": "Owner",
+            "Value": "PlatformTeam",
+          },
+          {
+            "Key": "Project",
+            "Value": "cornellnoteweb",
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Role",
+    },
+  },
+  "Rules": {
+    "CheckBootstrapVersion": {
+      "Assertions": [
+        {
+          "Assert": {
+            "Fn::Not": [
+              {
+                "Fn::Contains": [
+                  [
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                  ],
+                  {
+                    "Ref": "BootstrapVersion",
+                  },
+                ],
+              },
+            ],
+          },
+          "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI.",
+        },
+      ],
+    },
+  },
+}
+`;

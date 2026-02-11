@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "build": "tsc",
+    "test": "jest --runInBand",
+    "test:update": "jest --runInBand -u",
     "synth": "cdk synth",
     "deploy": "cdk deploy"
   },
@@ -12,8 +14,12 @@
     "constructs": "^10.3.0"
   },
   "devDependencies": {
+    "@types/jest": "^30.0.0",
     "@types/node": "^20.14.10",
     "aws-cdk": "2.1105.0",
+    "cdk-nag": "^2.37.55",
+    "jest": "^30.2.0",
+    "ts-jest": "^29.4.6",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.4"
   }

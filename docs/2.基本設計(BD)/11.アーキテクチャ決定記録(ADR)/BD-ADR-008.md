@@ -3,17 +3,18 @@ id: BD-ADR-008
 title: CloudFrontオリジンとしてLambda Function URL（OAC）を採用
 doc_type: ADR
 phase: BD
-version: 1.0.0
+version: 1.0.1
 status: 承認
 owner: RQ-SH-005
 created: 2026-02-09
-updated: 2026-02-09
+updated: 2026-02-11
 up:
 - '[[RQ-PC-003]]'
 related:
 - '[[BD-ARCH-003]]'
 - '[[BD-DEP-001]]'
 - '[[DD-DEP-001]]'
+- '[[BD-ADR-010]]'
 tags:
 - CornellNoteWeb
 - BD
@@ -47,6 +48,8 @@ CloudFront は Lambda を直接（Lambda@Edge のように）Java/Spring 実行�
 - [[BD-ARCH-003]]
 - [[BD-DEP-001]]
 - [[DD-DEP-001]]
+- [[BD-ADR-010]]
 
 ## 変更履歴
 - 2026-02-09: 初版
+- 2026-02-11: app/docsドメイン分離の追補ADR（[[BD-ADR-010]]）への参照を追加

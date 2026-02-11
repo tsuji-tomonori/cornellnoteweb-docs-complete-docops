@@ -10,6 +10,23 @@ export class QuartzSiteStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
+    const tagProject =
+      (this.node.tryGetContext("tagProject") as string | undefined) ?? "cornellnoteweb";
+    const tagEnvironment =
+      (this.node.tryGetContext("tagEnvironment") as string | undefined) ?? "Development";
+    const tagOwner =
+      (this.node.tryGetContext("tagOwner") as string | undefined) ?? "PlatformTeam";
+    const tagCostCenter =
+      (this.node.tryGetContext("tagCostCenter") as string | undefined) ?? "CC1234";
+    const tagManagedBy =
+      (this.node.tryGetContext("tagManagedBy") as string | undefined) ?? "CDK";
+
+    cdk.Tags.of(this).add("Project", tagProject);
+    cdk.Tags.of(this).add("Environment", tagEnvironment);
+    cdk.Tags.of(this).add("Owner", tagOwner);
+    cdk.Tags.of(this).add("CostCenter", tagCostCenter);
+    cdk.Tags.of(this).add("ManagedBy", tagManagedBy);
+
     const keyPrefix = "obsidian";
     const originPath = `/${keyPrefix}`;
     const siteAssetPath =
