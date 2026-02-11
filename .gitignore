@@ -156,3 +156,10 @@ playwright-report/
 test-results/
 allure-results/
 allure-report/
+
+# Java / Eclipse artifacts
+*.class
+/bin/
+.classpath
+.project
+.settings/
