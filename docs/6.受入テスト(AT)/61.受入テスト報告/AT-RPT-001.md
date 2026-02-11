@@ -3,15 +3,16 @@ id: AT-RPT-001
 title: 受入テスト報告（サンプル）
 doc_type: 受入テスト報告
 phase: AT
-version: 1.0.0
+version: 1.0.1
 status: 下書き
 owner: プロダクトオーナー
 created: 2026-01-31
-updated: 2026-02-09
+updated: 2026-02-11
 up:
 - '[[AT-PLAN-001]]'
 related:
 - '[[AT-GO-001]]'
+- '[[AT-REL-001]]'
 tags:
 - CornellNoteWeb
 - AT
@@ -31,5 +32,10 @@ tags:
 ## 既知課題
 - [[DD-ERR-001]] を参照
 
+## 公開レポート
+- Allure品質レポート: [/reports/allure/latest/](/reports/allure/latest/)
+- 生成/配置は `task report:allure:publish` を参照（[[AT-REL-001]]）
+
 ## 変更履歴
 - 2026-01-31: 初版
+- 2026-02-11: Allure公開レポートへの導線を追加

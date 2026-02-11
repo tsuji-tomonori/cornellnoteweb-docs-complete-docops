@@ -33,6 +33,7 @@ dependencies {
   implementation 'com.fasterxml.jackson.core:jackson-databind'
 
   testImplementation 'org.springframework.boot:spring-boot-starter-test'
+  testImplementation 'io.qameta.allure:allure-junit5:2.29.1'
   testImplementation 'com.github.database-rider:rider-spring:1.43.0'
   testImplementation 'com.github.database-rider:rider-core:1.43.0'
   testImplementation 'org.dbunit:dbunit:2.7.3'
@@ -42,6 +43,7 @@ dependencies {
 
 tasks.named('test') {
   useJUnitPlatform()
+  systemProperty 'allure.results.directory', "$buildDir/allure-source/junit"
   finalizedBy tasks.named('jacocoTestReport')
 }
 

@@ -28,3 +28,8 @@
 - バックエンド: Spring Boot / Java 21
 - DB: PostgreSQL（docker-composeでローカル起動）
 - IaC: AWS CDK（API Gateway + Lambda + Aurora 等）
+
+## 品質レポート（Allure）
+- 収集: `task report:allure:collect`
+- 生成: `task report:allure:generate`
+- 公開配置: `task report:allure:publish`

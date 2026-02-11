@@ -27,5 +27,8 @@ export default defineConfig({
     screenshot: 'only-on-failure',
     trace: 'retain-on-failure'
   },
-  reporter: [['html', { open: 'never' }]]
+  reporter: [
+    ['html', { open: 'never' }],
+    ['allure-playwright', { resultsDir: 'build/allure-source/playwright' }]
+  ]
 });

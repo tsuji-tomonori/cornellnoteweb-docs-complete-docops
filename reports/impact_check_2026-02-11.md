@@ -140,3 +140,57 @@
 ## メモ（テスト文書への反映）
 - `AT-OPS-001` に必須タグ準拠率、配賦率、Config非準拠是正、タグ機密監査のチェック項目を追加した。
 - `UT-PLAN-001` に必須タグ欠落/誤キー/許容値外、PIIタグ投入、キー大小文字ゆれのUT観点を追加した。
+
+## 変更起点（追記: Allure集約レポート導入）
+- `build.gradle`
+- `playwright.config.ts`
+- `Taskfile.yml`
+- `scripts/allure/collect-results.mjs`
+- [[BD-BUILD-001]]
+- [[AT-REL-001]]
+
+## 確認結果（影響なし: Allure集約レポート導入）
+- [[UT-STAT-001]]: 静的解析の実施基準自体は不変で、出力先をAllureへ集約する運用追加のみ。
+- [[UT-RPT-001]]: 単体テスト結果の内容定義は維持され、公開導線を追加しただけで受入基準変更なし。
+- [[IT-RST-001]]: 結合テスト結果の判定観点は不変で、可視化媒体の追加のみ。
+- [[AT-RPT-001]]: 受入テスト報告の判断ロジックは維持され、配信時の成果物にAllureを追加しただけ。
+
+## メモ（Allure集約レポート導入）
+- `report:allure:collect/generate/publish` をTaskに追加し、UT/E2E/品質ゲート結果を1つの静的レポートへ集約する運用を定義した。
+- 公開先は `quartz/public/reports/allure/latest` とし、既存 `docs:deploy` で配信可能な構成にした。
+
+## 変更起点（追記: app/docsドメイン分離とAPIオリジン分割）
+- [[BD-ADR-010]]
+- `infra/lib/app-site-stack.ts`
+- `infra/bin/quartz-site.ts`
+- `Taskfile.yml`
+- [[BD-ARCH-003]]
+- [[BD-DEP-001]]
+- [[DD-DEP-001]]
+- [[BD-API-001]]
+
+## 確認結果（影響なし: app/docsドメイン分離）
+- [[BD-DEP-003]]: docs 配信フロー（Quartz + S3 + CloudFront）は維持され、実行チェーンに破壊的変更なし。
+- [[AT-REL-001]]: リリース手順の docs デプロイ導線は維持され、app 配信手順は別スタック追加で吸収可能。
+- [[BD-SEC-001]]: 高位セキュリティ対策（セッション/Secrets/監査）と矛盾せず、境界分離により責務が明確化された。
+
+## メモ（app/docsドメイン分離）
+- `app.<domain>` は `/* -> Function URL(OAC)` と `/api/* -> API Gateway` の behavior 分割で運用する。
+- `docs.<domain>` は既存 `QuartzSiteStack` を継続利用し、公開導線を独立運用する。
+
+## 変更起点（追記: API Gateway自動生成）
+- `infra/lib/app-site-stack.ts`
+- `Taskfile.yml`
+- [[BD-ADR-010]]
+- [[BD-DEP-001]]
+- [[DD-DEP-001]]
+- [[BD-API-001]]
+
+## 確認結果（影響なし: API Gateway自動生成）
+- [[BD-ARCH-003]]: app/docs 分離アーキテクチャは維持され、API入口の作成責務を手動指定から自動生成へ置換しただけで構成意図は不変。
+- [[AT-REL-001]]: docs 配信手順に変更はなく、app デプロイ時に追加入力が減るのみ。
+- [[BD-SEC-001]]: セキュリティ境界（CloudFront/Function URL/OAC）は維持され、`/api/*` の入口が明確化された。
+
+## メモ（API Gateway自動生成）
+- `AppSiteStack` が Lambda 同居の `LambdaRestApi` を作成し、CloudFront の `/api/*` behavior を自動配線する。
+- デプロイ時の `API_ORIGIN_DOMAIN` 手動指定を廃止し、運用ミス余地を削減した。

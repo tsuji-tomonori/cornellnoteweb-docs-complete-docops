@@ -7,6 +7,7 @@ vars:
   SITE_ASSET_PATH: "{{.ROOT_DIR}}/quartz/public"
   OPENAPI_DIR: "{{.ROOT_DIR}}/docs/03-詳細設計/2.API詳細"
   STACK: "QuartzSiteStack"
+  APP_STACK: "AppSiteStack"
   CDK_ARGS: ""
   MOCK_PORT: "4001"
   MOCK_BASE_URL: "http://localhost:4001"
@@ -63,6 +64,22 @@ tasks:
       - infra:build
     cmds:
       - npm run deploy -- --context siteAssetPath={{.SITE_ASSET_PATH}} {{.STACK}} {{.CDK_ARGS}}
+
+  app:deploy:
+    desc: App配信スタックをデプロイ（CloudFront + Function URL + /api behavior）
+    dir: "{{.INFRA_DIR}}"
+    deps:
+      - infra:build
+    cmds:
+      - npm run deploy -- --context enableAppStack=true --context appAssetPath={{.ROOT_DIR}} {{.APP_STACK}} {{.CDK_ARGS}}
+
+  app:synth:
+    desc: App配信スタックのCDKテンプレートを生成
+    dir: "{{.INFRA_DIR}}"
+    deps:
+      - infra:build
+    cmds:
+      - npm run synth -- --context enableAppStack=true --context appAssetPath={{.ROOT_DIR}} {{.APP_STACK}} {{.CDK_ARGS}}
 
   docs:deploy:
     desc: ドキュメントのデプロイを一括実行（Quartz build + CDK deploy）
@@ -182,6 +199,43 @@ tasks:
       - frontend:install
     cmds:
       - sh -c 'python -m http.server {{.MOCK_PORT}} --directory mock >/tmp/cornellnoteweb-mock.log 2>&1 & SERVER_PID=$!; trap "kill $SERVER_PID" EXIT; APP_ENV=mock APP_BASE_URL={{.MOCK_BASE_URL}} npx playwright test "{{.FILE}}" -g "{{.TITLE}}"'
+
+  report:allure:collect:
+    desc: Collect test/quality outputs into Allure results
+    dir: "{{.ROOT_DIR}}"
+    deps:
+      - frontend:install
+    cmds:
+      - rm -rf build/allure-source build/allure-results build/allure-report
+      - ./gradlew --rerun-tasks test pmdMain spotbugsMain jacocoTestReport pitest
+      - task e2e:test
+      - npm run report:allure:collect
+
+  report:allure:generate:
+    desc: Generate Allure static report
+    dir: "{{.ROOT_DIR}}"
+    deps:
+      - report:allure:collect
+    cmds:
+      - npm run report:allure:generate
+
+  report:allure:open:
+    desc: Open generated Allure report
+    dir: "{{.ROOT_DIR}}"
+    deps:
+      - report:allure:generate
+    cmds:
+      - npm run report:allure:open
+
+  report:allure:publish:
+    desc: Publish Allure report under quartz/public/reports/allure/latest
+    dir: "{{.ROOT_DIR}}"
+    deps:
+      - report:allure:generate
+    cmds:
+      - mkdir -p quartz/public/reports/allure
+      - rm -rf quartz/public/reports/allure/latest
+      - cp -r build/allure-report quartz/public/reports/allure/latest
 
   db:status:
     desc: Show dbmate migration status

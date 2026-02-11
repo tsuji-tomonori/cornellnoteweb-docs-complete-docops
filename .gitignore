@@ -154,3 +154,5 @@ infra/cdk.out/
 build/
 playwright-report/
 test-results/
+allure-results/
+allure-report/
