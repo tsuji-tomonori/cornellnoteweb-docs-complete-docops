@@ -5,8 +5,12 @@ vars:
   QUARTZ_DIR: "{{.ROOT_DIR}}/quartz"
   INFRA_DIR: "{{.ROOT_DIR}}/infra"
   SITE_ASSET_PATH: "{{.ROOT_DIR}}/quartz/public"
+  OPENAPI_DIR: "{{.ROOT_DIR}}/docs/03-詳細設計/2.API詳細"
   STACK: "QuartzSiteStack"
   CDK_ARGS: ""
+  MOCK_PORT: "4001"
+  MOCK_BASE_URL: "http://localhost:4001"
+  REAL_BASE_URL: "http://localhost:3000"
 
 tasks:
   precommit:
@@ -64,3 +68,160 @@ tasks:
     desc: ドキュメントのデプロイを一括実行（Quartz build + CDK deploy）
     deps:
       - infra:deploy
+
+  openapi:build:
+    desc: Build OpenAPI HTML with Redocly
+    dir: "{{.ROOT_DIR}}"
+    cmds:
+      - npm exec --yes --package @redocly/cli -- redocly build-docs docs/03-詳細設計/2.API詳細/openapi.yaml -o docs/03-詳細設計/2.API詳細/openapi.html
+
+  openapi:ui:
+    desc: Serve OpenAPI HTML in browser
+    dir: "{{.OPENAPI_DIR}}"
+    cmds:
+      - python -m http.server 4000
+
+  docs:readme:
+    desc: Generate docs/README.md
+    dir: "{{.ROOT_DIR}}"
+    cmds:
+      - bash tools/generate-docs-readme.sh
+
+  backend:build:
+    desc: Build Spring Boot app
+    dir: "{{.ROOT_DIR}}"
+    cmds:
+      - ./gradlew build
+
+  backend:run:
+    desc: Run Spring Boot app
+    dir: "{{.ROOT_DIR}}"
+    cmds:
+      - ./gradlew bootRun
+
+  backend:test:
+    desc: Run backend unit tests
+    dir: "{{.ROOT_DIR}}"
+    cmds:
+      - ./gradlew test
+
+  backend:check:
+    desc: Run backend checks with coverage
+    dir: "{{.ROOT_DIR}}"
+    cmds:
+      - ./gradlew check
+
+  backend:pitest:
+    desc: Run backend PIT mutation testing
+    dir: "{{.ROOT_DIR}}"
+    cmds:
+      - ./gradlew pitest
+
+  backend:test:class:
+    desc: Run single backend test class (CLASS=...)
+    dir: "{{.ROOT_DIR}}"
+    cmds:
+      - ./gradlew test --tests "{{.CLASS}}"
+
+  backend:test:method:
+    desc: Run single backend test method (TEST=...)
+    dir: "{{.ROOT_DIR}}"
+    cmds:
+      - ./gradlew test --tests "{{.TEST}}"
+
+  frontend:install:
+    desc: Install frontend dependencies
+    dir: "{{.ROOT_DIR}}"
+    cmds:
+      - npm install
+
+  e2e:list:
+    desc: List Playwright tests
+    dir: "{{.ROOT_DIR}}"
+    cmds:
+      - npm run test:e2e -- --list
+
+  e2e:test:
+    desc: Run Playwright tests against mock (default)
+    dir: "{{.ROOT_DIR}}"
+    deps:
+      - frontend:install
+    cmds:
+      - sh -c 'python -m http.server {{.MOCK_PORT}} --directory mock >/tmp/cornellnoteweb-mock.log 2>&1 & SERVER_PID=$!; trap "kill $SERVER_PID" EXIT; sleep 1; APP_ENV=mock APP_BASE_URL={{.MOCK_BASE_URL}} npm run test:e2e'
+
+  e2e:test:real:
+    desc: Run Playwright tests against real app (requires backend running on 3000)
+    dir: "{{.ROOT_DIR}}"
+    deps:
+      - frontend:install
+    cmds:
+      - APP_ENV=real APP_BASE_URL={{.REAL_BASE_URL}} npm run test:e2e
+
+  e2e:ui:
+    desc: Run Playwright tests with UI against mock
+    dir: "{{.ROOT_DIR}}"
+    deps:
+      - frontend:install
+    cmds:
+      - sh -c 'python -m http.server {{.MOCK_PORT}} --directory mock >/tmp/cornellnoteweb-mock.log 2>&1 & SERVER_PID=$!; trap "kill $SERVER_PID" EXIT; APP_ENV=mock APP_BASE_URL={{.MOCK_BASE_URL}} npm run test:e2e:ui'
+
+  e2e:file:
+    desc: Run single Playwright spec against mock (FILE=...)
+    dir: "{{.ROOT_DIR}}"
+    deps:
+      - frontend:install
+    cmds:
+      - sh -c 'python -m http.server {{.MOCK_PORT}} --directory mock >/tmp/cornellnoteweb-mock.log 2>&1 & SERVER_PID=$!; trap "kill $SERVER_PID" EXIT; APP_ENV=mock APP_BASE_URL={{.MOCK_BASE_URL}} npx playwright test "{{.FILE}}"'
+
+  e2e:title:
+    desc: Run Playwright tests by title against mock (FILE=..., TITLE=...)
+    dir: "{{.ROOT_DIR}}"
+    deps:
+      - frontend:install
+    cmds:
+      - sh -c 'python -m http.server {{.MOCK_PORT}} --directory mock >/tmp/cornellnoteweb-mock.log 2>&1 & SERVER_PID=$!; trap "kill $SERVER_PID" EXIT; APP_ENV=mock APP_BASE_URL={{.MOCK_BASE_URL}} npx playwright test "{{.FILE}}" -g "{{.TITLE}}"'
+
+  db:status:
+    desc: Show dbmate migration status
+    dir: "{{.ROOT_DIR}}"
+    cmds:
+      - dbmate --migrations-dir "./migrations" status
+
+  db:up:
+    desc: Apply dbmate migrations
+    dir: "{{.ROOT_DIR}}"
+    cmds:
+      - dbmate --migrations-dir "./migrations" up
+
+  db:down:
+    desc: Roll back latest dbmate migration
+    dir: "{{.ROOT_DIR}}"
+    cmds:
+      - dbmate --migrations-dir "./migrations" down
+
+  mock:serve:
+    desc: Start mock app server
+    dir: "{{.ROOT_DIR}}"
+    cmds:
+      - python -m http.server {{.MOCK_PORT}} --directory mock
+
+  mock:test:
+    desc: Run Playwright tests against mock and update snapshots
+    dir: "{{.ROOT_DIR}}"
+    deps:
+      - frontend:install
+    cmds:
+      - sh -c 'python -m http.server {{.MOCK_PORT}} --directory mock >/tmp/cornellnoteweb-mock.log 2>&1 & SERVER_PID=$!; trap "kill $SERVER_PID" EXIT; APP_ENV=mock APP_BASE_URL={{.MOCK_BASE_URL}} ./node_modules/.bin/playwright test --update-snapshots'
+
+  docker:build:
+    desc: Build docker images
+    dir: "{{.ROOT_DIR}}"
+    cmds:
+      - docker compose build
+
+  docker:up:
+    desc: Restart docker compose services
+    dir: "{{.ROOT_DIR}}"
+    cmds:
+      - docker compose down
+      - docker compose up -d
